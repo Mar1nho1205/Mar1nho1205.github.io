@@ -6,7 +6,7 @@
       <label>Nome completo: </label>
       <input type='text' id='txtNomeCompleto'>
       
-      <button onClick='func01()'>>></button>
+      <button onClick='separacao'>>></button>
 
       <label>Nome: </label>
       <input type='text' id='txtNome'>
@@ -15,14 +15,16 @@
       <input type='text' id='txtSobrenome'>
     </form>
 <script>
-  function func01(){
-    let nome = document.getElementById('txtNomeCompleto').value;
+  function separacao(){
+   let nome = document.getElementById('txtNomeCompleto').value;
    let indiceEspaço = nome.IndexOf(' ');
 
    let primeiroNome = nome.substring(0, indiceEspaço);
    document.getElementById('txtNome') = primeiroNome;
 
-   let sobrenome = 
+   let sobrenome = nome.substring(indiceEspaço + 1);
+   document.getElementById('txtSobrenome') = sobrenome;
+    
   }
 </script>
         
