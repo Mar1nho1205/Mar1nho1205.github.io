@@ -16,7 +16,12 @@
     </form>
 <script>
   function func01(){
-    alert('Clicou')
+    let nome = document.getElementById('txtNomeCompleto').value;
+    document.getElementById('txtNome').value = nome;
+    let indiceEspaço = nome.IndexOf(' ');
+
+    let primeiroNome = nome.substring(0, indiceEspaço);
+    document
   }
 </script>
         
