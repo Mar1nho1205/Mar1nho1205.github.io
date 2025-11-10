@@ -17,11 +17,12 @@
 <script>
   function func01(){
     let nome = document.getElementById('txtNomeCompleto').value;
-    document.getElementById('txtNome').value = nome;
-   // let indiceEspaço = nome.IndexOf(' ');
+   let indiceEspaço = nome.IndexOf(' ');
 
-   // let primeiroNome = nome.substring(0, indiceEspaço);
-   // document
+   let primeiroNome = nome.substring(0, indiceEspaço);
+   document.getElementById('txtNome') = primeiroNome;
+
+   let sobrenome = 
   }
 </script>
         
