@@ -6,7 +6,7 @@
       <label>Nome completo: </label>
       <input type='text' id='txtNomeCompleto'>
       
-      <button onClick='separacao'>>></button>
+      <button type='button' onClick='separacao'>>></button>
 
       <label>Nome: </label>
       <input type='text' id='txtNome'>
@@ -17,13 +17,13 @@
 <script>
   function separacao(){
    let nome = document.getElementById('txtNomeCompleto').value;
-   let indiceEspaço = nome.IndexOf(' ');
+   let indiceEspaço = nome.indexOf(' ');
 
    let primeiroNome = nome.substring(0, indiceEspaço);
-   document.getElementById('txtNome') = primeiroNome;
+   document.getElementById('txtNome').value = primeiroNome;
 
    let sobrenome = nome.substring(indiceEspaço + 1);
-   document.getElementById('txtSobrenome') = sobrenome;
+   document.getElementById('txtSobrenome').value = sobrenome;
     
   }
 </script>
