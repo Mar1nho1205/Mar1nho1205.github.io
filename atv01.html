@@ -28,9 +28,10 @@ body {
     background-color: rgb(0, 150, 255)
   }
 
-  #caixas {
-    display: flex;
-    justify-content: center;
+  #layout {
+    display: grid;
+    align-itemns: center;
+    grid-template-columns: 1fr auto 1fr;
     gap: 20px:
   }
 
@@ -47,7 +48,7 @@ body {
 </head>
   <body>
     <form>
-     <div id='caixas'>
+     <div id='layout'>
       <label>Nome completo: </label>
       <input type='text' id='txtNomeCompleto' placeholder='Digite seu nome'>
       
