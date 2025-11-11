@@ -30,37 +30,40 @@ body {
 
   .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr auto 1fr;
+    justify-items: center;
+    align-items: center;
     gap: 20px;
   }
 
- .linha {
+ .direita {
    display: flex;
    flex-direction: column;
-   margin-bottom: 20px;
+   gap: 10px;
  }
 
-  input {
-    height: 40px
+  .esquerda input,
+  .direita input{
+    height: 40px;
+    width: 200px
   }
 </style>
 </head>
   <body>
     <form>
     <div class='container'>
-     <div class='linha'>
+     <div class='esquerda'>
       <label>Nome completo: </label>
       <input type='text' id='txtNomeCompleto' placeholder='Digite seu nome'>
      </div> 
       <button type='button' onClick='separacao()' id='botao'>>></button>
-<div class='linha'>
+<div class='direita'>
       <label>Nome: </label>
       <input type='text' id='txtNome'>
-</div>
-<div class='linha'>      
+
       <label>Sobrenome: </label>
       <input type='text' id='txtSobrenome'>
-</div>
+    </div>
     </div>
     </form>
 <script>
