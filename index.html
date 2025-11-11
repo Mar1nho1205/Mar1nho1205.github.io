@@ -43,17 +43,85 @@ body {
     list-style: none;
     padding: 0;
   }
+
+  #contato h2 {
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0;
+    line-height: 1.8;
+  }
+
+  #exp ul {
+    padding-left: 20px;
+  }
+
+  #exp li {
+    margin-bottom: 5px;
+  }
   
   table {
     border-collapse: collapse;
-    width: 50%;
+    width: 80%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    border-radius: 5px;
+    overflow: hidden;
   }
 
   th, td {
-    border: 1px solid black;
-    padding: 5px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #555;
     text-align: center;
   }
+
+  tr:nth-child(even) {
+    background-color: #fdfdfd;
+  }
+
+  tr:hover {
+    background-color: #f0f0f0;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
+
+  #atividades {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  #atividades a {
+    display: inline-block;
+    padding: 8px 15px;
+    bakcground-color: #eef;
+    border-radius: 4px;
+    width: 150px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  #atividades a:hover {
+    background-color: #dde;
+    text-decoration: none;
+  }
+  
 </style>
 </head>
 <body>
@@ -101,7 +169,7 @@ Cursando atualmente o 1° ano do Ensino Médio no Instituto Federal de Alagoas (
     <td>Edição de Vídeo</td>
   </tr>
 </table>
-  
+ <div id='atividades'> 
   <br>
   
   <a href='atv01.html'target='_blank'>Atividade 01</a>
@@ -109,4 +177,5 @@ Cursando atualmente o 1° ano do Ensino Médio no Instituto Federal de Alagoas (
   <br>
 
   <a href='atv02.html'target='_blank'>Atividade 02</a>
-</body>  
+ </div>
+</body>
