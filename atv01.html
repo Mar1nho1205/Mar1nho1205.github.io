@@ -34,10 +34,14 @@ body {
     gap: 20px:
   }
 
-  #txtNome, #txtSobrenome {
+  #direita {
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+
+  input {
+    height: 40px
   }
 </style>
 </head>
@@ -48,12 +52,13 @@ body {
       <input type='text' id='txtNomeCompleto' placeholder='Digite seu nome'>
       
       <button type='button' onClick='separacao()' id='botao'>>></button>
-
+<div id='direita'>
       <label>Nome: </label>
       <input type='text' id='txtNome'>
       
       <label>Sobrenome: </label>
       <input type='text' id='txtSobrenome'>
+</div>
     </div>
     </form>
 <script>
