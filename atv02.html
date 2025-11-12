@@ -14,6 +14,21 @@
 
       <label>Altura</label>
       <input type='number' min='0' step='5' id='altura' placeholder='Ex: 180'>
+
+      <button type='button' onClick='calcular()'>Calcular</button> 
+
+      <label>IMC</label>
+      <input type='text' id='resultado' readonly>
      </div>  
    </form>
+   <script>
+     function calcular() {
+        let nome = document.getElementById('nome').value
+        let peso = document.getElementById('peso').value
+        let altura = document.getElementById('altura').value
+
+        let imc = peso / (altura * altura)
+        document.getElementById('resultado') = imc
+     }
+   </script>
 </body>
