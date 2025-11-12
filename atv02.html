@@ -23,12 +23,19 @@
    </form>
    <script>
      function calcular() {
-        let nome = document.getElementById('nome').value
+        let nome = document.getElementById('nome').value.trim()
         let peso = document.getElementById('peso').value
         let altura = document.getElementById('altura').value
 
-        let imc = peso / ((altura/100) * (altura/100))
-        document.getElementById('resultado').value = 'Olá, ' + nome + '. O seu IMC é de ' + imc.toFixed(2)
+       if(nome !== ' ' && peso > 0 && altura > 0){
+          let alturaMetros = altura / 100;
+          let imc = peso / (alturaMetros * (alturaMetros);
+          let imcFormatado = imc.toFixed(2);
+         
+        document.getElementById('resultado').value = 'Olá, ' + nome + '. O seu IMC é de ' + imcFormatado
+       } else {
+         document.getElementById('resultado').value = 'Preencha todos os campos corretamente.'
+       }
      }
    </script>
 </body>
