@@ -27,8 +27,8 @@
         let peso = document.getElementById('peso').value
         let altura = document.getElementById('altura').value
 
-        let imc = peso / (altura * altura)
-        document.getElementById('resultado').value = 'Olá, ' + nome + '. O seu IMC é de ' + imc
+        let imc = peso / ((altura/100) * (altura/100))
+        document.getElementById('resultado').value = 'Olá, ' + nome. + ' O seu IMC é de ' + imc.toFixed(2)
      }
    </script>
 </body>
