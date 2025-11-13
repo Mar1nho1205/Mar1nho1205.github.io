@@ -5,10 +5,10 @@
 }
 
 * {
-    box-sizing: border-box;
 }
 
 body {
+    box-sizing: border-box;
     background: url(../img/fundo.jpg);
     background-position: center center;
     background-size: cover cover;
