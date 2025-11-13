@@ -231,3 +231,39 @@ main {
         margin: 10vh auto;
     }
 }
+
+/****************************** Troca de robô *****/
+.robot-container {
+    position: relative;
+    display: inline-block;
+}
+
+.troca-robo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+
+    background-color: rgba(255, 255, 255, 0.3)
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+
+    transition: background-color 0.2s;
+}
+
+.troca-robo:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#anterior {
+    left: 10px;
+}
+
+#proximo {
+    right: 10px;
+}
