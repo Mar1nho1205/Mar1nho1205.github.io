@@ -233,12 +233,21 @@ main {
 }
 
 /****************************** Troca de robô *****/
-.navegacao-robo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
+.robot-container {
+    position: relative;
+    display: inline-block;
 }
+
+.troca-robo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+
 
 
