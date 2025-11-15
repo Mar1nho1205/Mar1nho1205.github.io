@@ -234,7 +234,47 @@ main {
 
 /****************************** Troca de robô *****/
 
+.navegacao-robo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
 
+    width: 100%;
+    flex-wrap: wrap;
+}
 
+.navegacao-robo, .producao {
+    margin: 0;
+    width: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 150px;
+    max-width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+}
 
+.naevagacao-robo .troca-robo {
+    flex-shrink: 0;
+    position: static;
+    transform: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    wdith: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.navegacao-robo .troca-robo:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
