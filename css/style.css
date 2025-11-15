@@ -264,11 +264,12 @@ main {
 }
 
 .robotron-controle-producao .troca-robo {
+    transform: y(-50%)
     font-size: 2em;
     padding: 0.2em 1em;
     background: var(--main-branco);
     border: 3px solid var(--main-branco);
-    color: var(--main-branco);
+    color: var(--main-preto);
     clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
     cursor: pointer;
     line-height: 1;
