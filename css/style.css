@@ -236,20 +236,21 @@ main {
 
 .navegacao-robo {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
     margin-top: 20px;
-
     width: 100%;
     flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 0 10px;
 }
 
 .navegacao-robo, .producao {
     margin: 0;
     width: auto;
-    flex-grow: 1;
-    flex-shrink: 1;
+    flex-grow: 0;
+    flex-shrink: 0;
     flex-basis: 150px;
     max-width: 250px;
     padding: 10px;
