@@ -31,3 +31,11 @@ function trocarRobo(direcao) {
 
   roboImg.src = listaRobos[roboAtual];
 }
+
+btnProximo.addEventListener("click", () => {
+  trocarRobo("proximo");
+});
+
+btnAnterior.addEventListener("click", () => {
+  trocarRobo("anterior");
+});                            
