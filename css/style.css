@@ -258,13 +258,15 @@ main {
     color: var(--main-branco);
 }
 
+/* Alinha os botões de troca com o botão de produção */
 .robotron-controle-producao {
     display: flex;
     gap: 15px;
+    align-items: center; /* garante alinhamento vertical */
 }
 
 .robotron-controle-producao .troca-robo {
-    transform: y(-50%)
+    /* Removi o transform inválido e padronizei tamanho/padding para combinar com .producao */
     font-size: 2em;
     padding: 0.2em 1em;
     background: var(--main-branco);
@@ -272,6 +274,9 @@ main {
     color: var(--main-preto);
     clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     line-height: 1;
 }
 
