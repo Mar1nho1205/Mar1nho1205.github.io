@@ -234,8 +234,9 @@ main {
 
 /****************************************** Troca Robô *****/
 
+
+
 .robotron-controle-producao {
-    float: right;
     margin-top: 1em;
     margin-right: 15px;
     display: flex;
