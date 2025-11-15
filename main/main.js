@@ -1,7 +1,6 @@
 const listaRobos = [
   "img/robotron.png",
   "img/robotron-amarelo.png",
-  "img/robotron-azul.png",
   "img/robotron-branco.png",
   "img/robotron-preto.png",
   "img/robotron-rosa.png",
@@ -39,4 +38,5 @@ btnProximo.addEventListener("click", () => {
 btnAnterior.addEventListener("click", () => {
   trocarRobo("anterior");
 });                            
+
 
