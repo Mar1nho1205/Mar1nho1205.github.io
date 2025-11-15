@@ -234,7 +234,14 @@ main {
 
 /****************************************** Troca Robô *****/
 
-
+.producao-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 2em;
+    padding: 0.2em 1em;
+    clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
+}
 
 .robotron-controle-producao {
     margin-top: 1em;
