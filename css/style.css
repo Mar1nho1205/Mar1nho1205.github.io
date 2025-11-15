@@ -278,6 +278,7 @@ main {
     align-items: center;
     justify-content: center;
     line-height: 1;
+    margin: 26px;
 }
 
 .robotron-controle-producao .troca-robo:hover {
