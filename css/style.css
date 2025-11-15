@@ -231,3 +231,35 @@ main {
         margin: 10vh auto;
     }
 }
+
+/****************************************** Troca Robô *****/
+
+.robotron-controle-producao {
+    float: right;
+    margin-top: 1em;
+    margin-right: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.robotron-controle-producao .troca-robo {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--main-cinza);
+    background: var(--main-preta);
+    text-align: center;
+    border: 3px solid var(--main-cinza);
+    cursor: pointer;
+
+    font-size: 2.5em;
+    line-height: 36px;
+    padding: 0;
+}
+
+.robotron-controle-producao .troca-robo:hover {
+    background: #222;
+    color: var(--main-branco);
+    border-color: var(--main-branco);
+}
