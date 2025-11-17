@@ -17,6 +17,9 @@ function trocarRobo(direcao) {
   if (direcao === "proximo") {
     roboAtual++;
 
+    if (direcao >= listaRobos.length) {
+      roboAtual = listaRobos.length - 1
+    }
   
   } else if (direcao === "anterior") {
     roboAtual--;
@@ -36,6 +39,7 @@ btnProximo.addEventListener("click", () => {
 btnAnterior.addEventListener("click", () => {
   trocarRobo("anterior");
 });                            
+
 
 
 
