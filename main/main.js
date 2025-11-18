@@ -40,7 +40,9 @@ btnAnterior.addEventListener("click", () => {
   trocarRobo("anterior");
 });                            
 
-
+function status() {
+  
+}
 
 
 
