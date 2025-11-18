@@ -18,7 +18,7 @@ function trocarRobo(direcao) {
     roboAtual++;
 
     if (direcao >= listaRobos.length) {
-      roboAtual = listaRobos.length - 1
+      roboAtual = 0;
     }
   
   } else if (direcao === "anterior") {
