@@ -94,7 +94,7 @@ function manipulaDados(operacao, controle, peca) {
 if (operacao === '-') {
   
    if (valorAtual > 0) {
-    valorAtual = valorAtual + 1;
+    valorAtual = valorAtual - 1;
     pecaContador.value = formatarValor(valorAtual)
     atualizaEstatisticas(peca, '-'); 
   }
@@ -128,5 +128,6 @@ function formatarValor(valor) {
   return valor;
 }  
 }
+
 
 
