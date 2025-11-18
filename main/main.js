@@ -18,7 +18,7 @@ function trocarRobo(direcao) {
     roboAtual++;
 
     if (direcao >= listaRobos.length) {
-      roboAtual = 0;
+      roboAtual = listaRobos.length + 1;
     }
   
   } else if (direcao === "anterior") {
@@ -128,6 +128,7 @@ function formatarValor(valor) {
   return valor;
 }  
 }
+
 
 
 
