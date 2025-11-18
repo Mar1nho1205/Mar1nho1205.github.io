@@ -77,7 +77,7 @@ const pecas = {
 }
 
 controles.forEach( (elemento) => {
-  element.addEventListener("click", (evento) => {
+  elemento.addEventListener("click", (evento) => {
 
     const operacao = event.target.dataset.controle;
     const controlePai = event.target.parentNode;
@@ -109,14 +109,14 @@ if (operacao === '-') {
   
 function atualizaEstatisticas (peca, operacao) {
   estatisticas.forEach( (elemento) => {
-    const item = element.dataset.estatistica;
+    const item = elemento.dataset.estatistica;
     const valorAtual = parseInt(elemento.textContent);
     const valorDaPeca = pecas[peca][item];
 
     if (operacao === '+') {
-      element.textContent = valorAtual + valorDaPeca;
+      elemenot.textContent = valorAtual + valorDaPeca;
     } else {
-      element.textContent = valorAtual - valorDaPeca;
+      elemento.textContent = valorAtual - valorDaPeca;
     }
   } )
 }
@@ -128,3 +128,4 @@ function formatarValor(valor) {
   return valor;
 }  
 }
+
