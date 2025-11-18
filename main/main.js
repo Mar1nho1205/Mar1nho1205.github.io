@@ -17,7 +17,7 @@ function trocarRobo(direcao) {
   if (direcao === "proximo") {
     roboAtual++;
 
-    if (direcao >= listaRobos.length) {
+    if (direcao > listaRobos.length) {
       roboAtual = 0;
     }
   
@@ -128,6 +128,7 @@ function formatarValor(valor) {
   return valor;
 }  
 }
+
 
 
 
