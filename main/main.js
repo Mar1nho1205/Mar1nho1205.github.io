@@ -79,9 +79,9 @@ const pecas = {
 controles.forEach( (elemento) => {
   elemento.addEventListener("click", (evento) => {
 
-    const operacao = event.target.dataset.controle;
-    const controlePai = event.target.parentNode;
-    const peca = event.target.dataset.peca;
+    const operacao = evento.target.dataset.controle;
+    const controlePai = evento.target.parentNode;
+    const peca = evento.target.dataset.peca;
 
     manipulaDados(operacao, controlePai, peca);
   })
@@ -128,4 +128,5 @@ function formatarValor(valor) {
   return valor;
 }  
 }
+
 
