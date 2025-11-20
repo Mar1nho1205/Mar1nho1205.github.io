@@ -122,8 +122,9 @@ main {
    height: 40px;
    border-radius: 50%;
     
-   background: var(--main-cinza);
+   background: var(--main-preto);
    border: 3px solid var(--main-cinza);
+   color: var(--main-cinza); 
    font-size: 3em;
    cursor: pointer;
 
