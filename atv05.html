@@ -50,6 +50,56 @@
       </div>
       <div class='msg-erro' id='msg-email'>O email deve ter @ (Arroba) e . (ponto final)</div>
     </fieldset>
+    <fieldset>
+      <legend>Informações de Matrícula</legend>
+
+      <div class='matricula-flex'>
+
+        <div class='coluna-mat'>
+          <label class='titulo-coluna'>Série:</label>
+          <div class='select-wrapper'>
+            <select id='campo-serie' required>
+              <option value='' disabled selected>Selecione...</option>
+              <option value='pre'>Pré-escolar</option>
+              <option value='1ano'>1° ano</option>
+              <option value='2ano'>2° ano</option>
+              <option value='3ano'>3° ano</option>
+            </select>  
+        </div>
+      </div>
+
+        <div class='coluna-mat'>
+          <label class='titulo-coluna'>Turno:</label>
+          <div class='radio-group'>
+            <label class='radio-item'>
+              <input type='radio' name='turno' value='manha' required>
+              <span>Manhã</span>
+            </label>
+            <label class='radio-item'>
+              <input type='radio' name='turno' value='tarde' required>
+              <span>Tarde</span>
+            </label>  
+            </select>
+          </div>
+        </div>
+
+        <div class='coluna-mat'>
+          <label class='titulo-coluna'>Atividades Extracurrículares (Máx. 3)</label>
+          <div class='check-grid'>
+            <label><input type='checkbox' class='check-atividade' value='info'> Informática</label>
+            <label><input type='checkbox' class='check-atividade' value='musica'> Música</label>
+            <label><input type='checkbox' class='check-atividade' value='balet'> Balet</label>
+            <label><input type='checkbox' class='check-atividade' value='pintura'> Pintura</label>
+            <label><input type='checkbox' class='check-atividade' value='judo'> Judô</label>
+            <label><input type='checkbox' class='check-atividade' value='futebol'> Futebol</label>
+          </div>
+        </div>
+    </fieldset>
+
+    <div class='botoes-container'>
+      <button type='submit' class='btn-enviar'>Matricular Aluno</button>
+      <button type='reset' class='btn-limpar'>Matricular Aluno</button>
+    </div>  
   </form>
   <script src='main/escola.js'></script>
 </body>
