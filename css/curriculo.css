@@ -27,7 +27,7 @@ body {
       color: var(--accent-color);
       font-weight: bold;
       transform: translateX(5px);
-      margin-top: 8px;
+      margin-top: 3px;
   }
 
   p:hover {
