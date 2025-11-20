@@ -278,7 +278,7 @@ main {
     display: flex;
     gap: 15px;
     align-items: center; /* garante alinhamento vertical */
-    transform: translateY(10px)
+    transform: translateY(5px)
 }
 
 .robotron-controle-producao .troca-robo {
