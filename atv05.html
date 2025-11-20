@@ -5,4 +5,49 @@
 <body>
   <h1>Escola Virtual</h1>
   <h2>Formulário de Pré-Matrícula</h2>
+
+  <form>
+    <fieldset>
+      <legend>Dados Pessoais</legend>
+
+      <div class='linha-input'>
+        <label>Nome do Aluno:</label>
+        <input type='text' placeholder='Nome Completo'>
+      </div>
+
+      <div class='linha-input'>
+        <label>Nascimento:</label>
+        <input type='text' class='pequeno' placeholder='Dia'>
+        <span>/</span>
+        <input type='text' class='pequeno' placeholder='Mês'>
+        <span>/</span>
+        <input type='text' class='pequeno' placeholder='Ano'>
+      </div>
+
+      <div class='linha-input'>
+        <label>Nome do Pai:</label>
+        <input type='text'>
+      </div>
+      
+      <div class='linha-input'>
+        <label>Nome da Mãe:</label>
+        <input type='text'>
+      </div>
+      
+      <div class='linha-input'>
+        <label>Telefone:</label>
+        <div class='grupo-inputs'>
+          <input type='number' class='pequeno' placeholder='DDD'>
+          <input type='number' class='pequeno' placeholder='Ex: (99) 99999-9999'>
+          <span>Ramal:</span>
+          <input type='text' class='pequeno'>
+        </div>
+      </div>
+
+      <div class='linha-input'>
+        <label>Email:</label>
+        <input placeholder='Ex: seunome@gmail.com'
+      </div>
+    </fieldset>
+  </form>
 </body>
