@@ -24,11 +24,13 @@ body {
 
   p {
       padding-bottom: 0;
-      color: var(--primary-color);
+      color: var(--accent-color);
+      font-weight: bold;
+      transform: translateX(50px);
   }
 
   p:hover {
-      color: var(--accent-color);
+      text-decoration: underline;
   }
 
   img {
