@@ -46,3 +46,74 @@ input[type=number] {
   margin-left: 220px;
   display: none;
 }
+
+.matricula-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.coluna-mat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo-coluna {
+  font-weight: bold;
+  color: #2960b9;
+  margin-bottom: 10px;
+  display: block;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+}
+
+.radio-item, .check-grid label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.check-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.botoes-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+button {
+ padding: 12px 30px;
+ border: none;
+ border-radius: 25px;
+ font-size: 1rem;
+ cursor: pointer;
+ font-weight: bold;
+ transition: 0.3s; 
+}
+
+.btn-enviar {
+  background-color: #2980b9;
+  color: white;
+}
+
+.btn-enviar:hover { background-color: #1abc9c }
+
+.btn-limpar {
+  background-color: #e74c3c;
+  color: white;
+  margin-left: 15px;
+}
+
+.btn-limpar:hover { background-color: #c0392b; }
