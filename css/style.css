@@ -114,20 +114,23 @@ main {
 }
 
 .controle-ajuste {
-    display: inline-flex;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    transform: translateY(5px);
-    line-height: 1px;
-    border-radius: 50%;
-    color: var(--main-cinza);
-    font-size: 4em;
-    background: var(--main-preto);
-    text-align: center;
-    border: 3px solid var(--main-cinza);
-    cursor: pointer;
+   display: inline-flez;
+   justify-content: center;
+   align-items: center;
+    
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+    
+   background: var(--main-preto);
+   border: 3px solid var(--main-cinza);
+   font-size: 3em;
+   cursor: pointer;
+
+   line-height: 0;
+   padding: 0; 
+   padding-bottom: 6px;
+   transform: translateY(0); 
 }
 
 .linha {
