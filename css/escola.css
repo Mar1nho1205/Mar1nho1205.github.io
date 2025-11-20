@@ -25,3 +25,24 @@ hr {
   border-top: 1px solid #999;
   margin-bottom: 20px;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.campo-erro {
+  border: 2px solid #e74c3c !important;
+  background-color: #fceae9;
+}
+
+.msg-erro {
+  color: #e74c3c;
+  font-size: 0.8em;
+  margin-left: 220px;
+  display: none;
+}
