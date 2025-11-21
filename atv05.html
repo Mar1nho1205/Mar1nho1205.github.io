@@ -3,103 +3,103 @@
   <link rel='stylesheet' href='css/escola.css'>
 </head>
 <body>
+<div class='container'>
+
+ <div id='tela-formulario'> 
   <h1>Escola Virtual</h1>
   <h2>Formulário de Pré-Matrícula</h2>
 
-  <form>
+  <form id='form-matricula novalidate'>
     <fieldset>
       <legend>Dados Pessoais</legend>
+      <div class='form-grid'>
 
-      <div class='linha-input'>
         <label>Nome do Aluno:</label>
         <input type='text' placeholder='Nome Completo' required>
-      </div>
+      <div class='mensagem-erro' id='erro-nomeAluno'>Digite o nome completo (mínimo 2 termos).</div>
 
-      <div class='linha-input'>
         <label>Nascimento:</label>
+       <div class='input-group'> 
         <input type='text' class='pequeno' placeholder='Dia' required>
         <span>/</span>
         <input type='text' class='pequeno' placeholder='Mês' required>
         <span>/</span>
         <input type='text' class='pequeno' placeholder='Ano' required>
       </div>
+      <div class='mensagem-erro' id='erro-data'>Data inválida (Ex: 31/02 não existe).</div>
 
-      <div class='linha-input'>
+     
         <label>Nome do Pai:</label>
-        <input type='text' required>
-      </div>
+        <input type='text' id='nomePai' placeholder='Nome e Sobrenome' required>
+        <div class='mensagem-erro' id='erro-nomePai'>Digite o nome completo do pai.</div>
       
-      <div class='linha-input'>
         <label>Nome da Mãe:</label>
-        <input type='text' required>
-      </div>
+        <input type='text' id='nomeMae' placeholder='Nome e Sobrenome' required>
+        <div class='mensagem-erro' id='erro-nomeMae'>Digite o nome do completo da mãe.</div>
       
-      <div class='linha-input'>
         <label>Telefone:</label>
-        <div class='grupo-inputs'>
-          <input type='number' class='pequeno' placeholder='DDD' required>
-          <input type='number' class='pequeno' placeholder='Ex: (99) 99999-9999' required>
-          <span>Ramal:</span>
-          <input type='text' class='pequeno' placeholder='Ex: 205'>
+        <div class='input-group'>
+          <input type='number' id='telDDD' class='input-pequeno' placeholder='DDD' required>
+          <input type='number' id='telNumero' class='input-medio' placeholder='Ex: (99) 99999-9999' required>
+          <span style='font-size: 0.8rem; margin-left: 10px;'>Ramal:</span>
+          <input type='number' id='telRamal' class='input-pequeno' placeholder='Ex: (Op)'>
         </div>
-      </div>
+      <div class='mensagem-erro' id='erro-telefone'>DDD inválido ou telefone incompleto.</div>
 
-      <div class='linha-input'>
         <label>Email:</label>
         <input id='campo-email' placeholder='Ex: seunome@gmail.com' required>
+        <div class='mensagem-erro' id='erro-email'>O email deve ter @ (Arroba) e . (ponto final)</div>
+        
       </div>
-      <div class='msg-erro' id='msg-email'>O email deve ter @ (Arroba) e . (ponto final)</div>
     </fieldset>
+    
     <fieldset>
       <legend>Informações de Matrícula</legend>
+      <div class='form-grid'>
 
-      <div class='matricula-flex'>
-
-        <div class='coluna-mat'>
-          <label class='titulo-coluna'>Série:</label>
-          <div class='select-wrapper'>
+          <label>Série:</label>
             <select id='campo-serie' required>
               <option value='' disabled selected>Selecione...</option>
               <option value='pre'>Pré-escolar</option>
-              <option value='1ano'>1° ano</option>
-              <option value='2ano'>2° ano</option>
-              <option value='3ano'>3° ano</option>
-            </select>  
-        </div>
-      </div>
-
-        <div class='coluna-mat'>
-          <label class='titulo-coluna'>Turno:</label>
-          <div class='radio-group'>
-            <label class='radio-item'>
-              <input type='radio' name='turno' value='manha' required>
-              <span>Manhã</span>
-            </label>
-            <label class='radio-item'>
-              <input type='radio' name='turno' value='tarde' required>
-              <span>Tarde</span>
-            </label>  
+              <option value='1ano'>1° Ano</option>
+              <option value='2ano'>2° Ano</option>
+              <option value='3ano'>3° Ano</option>
             </select>
+        <div class='mensagem-erro' id='erro-serie'>Selecione uma série.</div>
+        
+          <label>Turno:</label>
+          <div style='diplay: flex; gap: 20px'>
+            <label class='label-opcao'><input type='radio' name='turno' value='manha'> Manhã</label>
+            <label class='label-opcao'><input type='radio' name='turno' value='tarde'> Tarde</label>
           </div>
-        </div>
+          <div class='mensagem-erro' id='erro-turno'>Selecione um turno.</div>
 
-        <div class='coluna-mat'>
-          <label class='titulo-coluna'>Atividades Extracurrículares (Máx. 3)</label>
-          <div class='check-grid'>
-            <label><input type='checkbox' class='check-atividade' value='info'> Informática</label>
-            <label><input type='checkbox' class='check-atividade' value='musica'> Música</label>
-            <label><input type='checkbox' class='check-atividade' value='balet'> Balet</label>
-            <label><input type='checkbox' class='check-atividade' value='pintura'> Pintura</label>
-            <label><input type='checkbox' class='check-atividade' value='judo'> Judô</label>
-            <label><input type='checkbox' class='check-atividade' value='futebol'> Futebol</label>
+          <label>Atividades Extracurrículares:<br><span style='font-size: 0.7rem; font-weight: normal'>(Máx. 3)</span></label>
+          <div class='grid-opcoes'>
+            <label class='label-opcao'><input type='checkbox' class='check-atv' value='info'> Informática</label>
+            <label class='label-opcao'><input type='checkbox' class='check-atv' value='musica'> Música</label>
+            <label class='label-opcao'><input type='checkbox' class='check-atv' value='balet'> Balet</label>
+            <label class='label-opcao'><input type='checkbox' class='check-atv' value='pintura'> Pintura</label>
+            <label class='label-opcao'><input type='checkbox' class='check-atv' value='judo'> Judô</label>
+            <label class='label-opcao'><input type='checkbox' class='check-atv' value='futebol'> Futebol</label>
           </div>
         </div>
     </fieldset>
 
     <div class='botoes-container'>
-      <button type='submit' class='btn-enviar'>Matricular Aluno</button>
-      <button type='reset' class='btn-limpar'>Limpar Matrícula</button>
+      <button type='submit'>Matricular Aluno</button>
+      <button type='reset' class='btn-reset'>Limpar Matrícula</button>
     </div>  
   </form>
+ </div>
+
+ <div id='tela-sucesso'>
+   <div class='icone-sucesso'>✓</div>
+   <h1 style='color: #43a047;'>Sucesso!</h1>
+   <p style='font-size: 1.2rem; color: #555;'>O cadastro do aluno foi realizado com sucesso.</p>
+   <button onClick='location.reload()' style='margin-top: 30px; background-color: #43a047;'>Novo Cadastro</button>
+ </div>
+
+</div>
   <script src='main/escola.js'></script>
 </body>
