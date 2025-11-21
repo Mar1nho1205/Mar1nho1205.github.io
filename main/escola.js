@@ -16,16 +16,21 @@ function mostrarErro(idElemento, idMensagem, mostrar) {
   const fg = document.getElementById(idElemento);
   const msg = document.getElementById(idMensagem);
 
-  if (mostrar) {
-    fg.classList.add('input-erro');
+  if (!input || !erro) {
+    console.error('ERRO DE CÓDIGO: ID não encontrado ->', idInput, idMensagem);
+    return true;
+  }
+
+  if (temErro) {
+    input.classList.add('input-erro');
     msg.classList.add('ativo');
-    return: false;
-} else {
-    fg.classList.remove('input-erro');
+    return false;
+  } else {
+    input.classList.remove('input-erro');
     msg.classList.remove('ativo');
     return: true;
- }
-}
+  }
+} 
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
@@ -35,6 +40,7 @@ form.addEventListener('submit', function(e) {
     const valor = document.getElementById(idInput).value.trim();
     const termos = valor.split(/\s+/).filter(t => t.length > 0);
     return mostrarErro(idInput, idMsg, termos.length < 2);
+  };
 
   if (!validaNome('nomeAluno', 'erro-nomeAluno')) formularioValido = false;
   if (!validaNome('nomeMae', 'erro-nomeMae')) formularioValido = false;
@@ -49,19 +55,19 @@ form.addEventListener('submit', function(e) {
   const ano = parseInt(document.getElementById('nascAno').value);
 
   const dataObj = new Date(ano, mes - 1, dia);
-  const dataReal (dataObj.getFullYear() === ano && (dataObj.getMonth() + 1) === mes && dataObj.getDate() === dia);
+  const dataReal = (dataObj.getFullYear() === ano && (dataObj.getMonth() + 1) === mes && dataObj.getDate() === dia);
 
   const msgData = document.getElementById('erro-data');
   if (!dataReal || ano < 1900 || ano > 2025) {
-    document.getElementById('nascDia').classsList.add('input-erro');
-    document.getElementById('nascMes').classsList.add('input-erro');
-    document.getElementById('nascAno').classsList.add('input-erro');
+    document.getElementById('nascDia').classList.add('input-erro');
+    document.getElementById('nascMes').classList.add('input-erro');
+    document.getElementById('nascAno').classList.add('input-erro');
     msgData.classList.add('ativo');
     formularioValido = false;
   } else {
-    document.getElementById('nascDia').classsList.add('input-erro');
-    document.getElementById('nascMes').classsList.add('input-erro');
-    document.getElementById('nascAno').classsList.add('input-erro');
+    document.getElementById('nascDia').classList.remove('input-erro');
+    document.getElementById('nascMes').classList.remove('input-erro');
+    document.getElementById('nascAno').classList.remove('input-erro');
     msgData.classList.remove('ativo');
   }
 
@@ -84,7 +90,7 @@ form.addEventListener('submit', function(e) {
       mostrarErro('serie', 'erro-serie', false);
   }
 
-    const turnoMarcado = document.querySelector('input[name='turno']:checked');
+    const turnoMarcado = document.querySelector('input[name="turno"]:checked');
     const msgTurno = document.getElementById('erro-turno');
     if (!turnoMarcado) {
       msgTurno.classList.add('ativo');
