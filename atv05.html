@@ -12,41 +12,41 @@
 
       <div class='linha-input'>
         <label>Nome do Aluno:</label>
-        <input type='text' placeholder='Nome Completo'>
+        <input type='text' placeholder='Nome Completo' required>
       </div>
 
       <div class='linha-input'>
         <label>Nascimento:</label>
-        <input type='text' class='pequeno' placeholder='Dia'>
+        <input type='text' class='pequeno' placeholder='Dia' required>
         <span>/</span>
-        <input type='text' class='pequeno' placeholder='Mês'>
+        <input type='text' class='pequeno' placeholder='Mês' required>
         <span>/</span>
-        <input type='text' class='pequeno' placeholder='Ano'>
+        <input type='text' class='pequeno' placeholder='Ano' required>
       </div>
 
       <div class='linha-input'>
         <label>Nome do Pai:</label>
-        <input type='text'>
+        <input type='text' required>
       </div>
       
       <div class='linha-input'>
         <label>Nome da Mãe:</label>
-        <input type='text'>
+        <input type='text' required>
       </div>
       
       <div class='linha-input'>
         <label>Telefone:</label>
         <div class='grupo-inputs'>
-          <input type='number' class='pequeno' placeholder='DDD'>
-          <input type='number' class='pequeno' placeholder='Ex: (99) 99999-9999'>
+          <input type='number' class='pequeno' placeholder='DDD' required>
+          <input type='number' class='pequeno' placeholder='Ex: (99) 99999-9999' required>
           <span>Ramal:</span>
-          <input type='text' class='pequeno'>
+          <input type='text' class='pequeno' required>
         </div>
       </div>
 
       <div class='linha-input'>
         <label>Email:</label>
-        <input id='campo-email' placeholder='Ex: seunome@gmail.com'>
+        <input id='campo-email' placeholder='Ex: seunome@gmail.com' required>
       </div>
       <div class='msg-erro' id='msg-email'>O email deve ter @ (Arroba) e . (ponto final)</div>
     </fieldset>
