@@ -1,7 +1,12 @@
 body {
   font-family: 'Times New Roman', Times, serif;
   background-color: #f0f0f0;
-  margin: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  aling-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
 h1 {
