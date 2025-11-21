@@ -1,100 +1,102 @@
-const checkboxes = document.querySelector('.check-atividade');
+const form = document.getElementById('form-matricula');
+const checksAtividades = document.querySelectorAll('.check-atv');
+const dddsValidos = [11,12,13,14,15,16,17,18,19,21,22,24,27,28,31,32,33,34,35,37,38,41,42,43,44,45,46,47,48,49,51,53,54,55,61,62,64,63,65,66,67,68,69,71,73,74,75,77,79,81,87,82,83,84,85,88,86,89,91,93,94,92,97,95,96,98,99];
 
-checkboxes.forEach(box => {
-  box.addEventListener('change', () => {
-     const selecionados = document.querySelectorAll('.check-atividade:checked').length;
-
-  if (selecionados > 3) {
-    box.checked = false;
-    alert('Você só pode selecionar 3 atividades extracurriculares.')
-  }
+checksAtividades.forEach(check => {
+  check.addEventListener('change', function() {
+    const quantosMarcados = document.querySelectorAll('.check-atv:checked').length;
+    if (quantosMarcados > 3) {
+      this.checked = false;
+      alert('Atenção: O limite é de 3 atividades extracurriculares.');
+    }
   });
 });
 
-const dddsValidos = [
-    11, 12, 13, 14, 15, 16, 17, 18, 19, // SP
-    21, 22, 24, // RJ
-    27, 28, // ES
-    31, 32, 33, 34, 35, 37, 38, // MG
-    41, 42, 43, 44, 45, 46, // PR
-    47, 48, 49, // SC
-    51, 53, 54, 55, // RS
-    61, // DF
-    62, 64, // GO
-    63, // TO
-    65, 66, // MT
-    67, // MS
-    68, // AC
-    69, // RO
-    71, 73, 74, 75, 77, // BA
-    79, // SE
-    81, 87, // PE
-    82, // AL
-    83, // PB
-    84, // RN
-    85, 88, // CE
-    86, 89, // PI
-    91, 93, 94, // PA
-    92, 97, // AM
-    95, // RR
-    96, // AP
-    98, 99 // MA
-];
+function mostrarErro(idElemento, idMensagem, mostrar) {
+  const fg = document.getElementById(idElemento);
+  const msg = document.getElementById(idMensagem);
 
-const formulario = document.querySelector('form');
+  if (mostrar) {
+    fg.classList.add('input-erro');
+    msg.classList.add('ativo');
+    return: false;
+} else {
+    fg.classList.remove('input-erro');
+    msg.classList.remove('ativo');
+    return: true;
+ }
+}
 
-formulario.addEventListener('submit', (evento) => {
-  evento.preventDefault();
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
   let formularioValido = true;
 
-  const email = document.querySelector('#campo-email');
-  if (!email.value.includes('@') || !email.value.includes('.')) {
-    email.classList.add('campo-erro');
+  const validaNome = (idInput, idMsg) => {
+    const valor = document.getElementById(idInput).value.trim();
+    const termos = valor.split(/\s+/).filter(t => t.length > 0);
+    return mostrarErro(idInput, idMsg, termos.length < 2);
+
+  if (!validaNome('nomeAluno', 'erro-nomeAluno')) formularioValido = false;
+  if (!validaNome('nomeMae', 'erro-nomeMae')) formularioValido = false;
+  if (!validaNome('nomePai', 'erro-nomePai')) formularioValido = false; 
+
+  const emailValor = document.getElementById('email').value;
+  const emailValido = emailValor.includes('@') && emailValor.includes('.');
+  if (!mostrarErro('email', 'erro-email', !emailValido)) formularioValido = false;
+
+  const dia = parseInt(document.getElementById('nascDia').value);
+  const mes = parseInt(document.getElementById('nascMes').value);
+  const ano = parseInt(document.getElementById('nascAno').value);
+
+  const dataObj = new Date(ano, mes - 1, dia);
+  const dataReal (dataObj.getFullYear() === ano && (dataObj.getMonth() + 1) === mes && dataObj.getDate() === dia);
+
+  const msgData = document.getElementById('erro-data');
+  if (!dataReal || ano < 1900 || ano > 2025) {
+    document.getElementById('nascDia').classsList.add('input-erro');
+    document.getElementById('nascMes').classsList.add('input-erro');
+    document.getElementById('nascAno').classsList.add('input-erro');
+    msgData.classList.add('ativo');
     formularioValido = false;
+  } else {
+    document.getElementById('nascDia').classsList.add('input-erro');
+    document.getElementById('nascMes').classsList.add('input-erro');
+    document.getElementById('nascAno').classsList.add('input-erro');
+    msgData.classList.remove('ativo');
   }
 
-  const inputDDD = document.querySelector('input[placeholder='DDD']');
-  const dddDigitado = parseInt(inputDDD,value);
+    const ddd = parseInt(document.getElementById('telDDD').value);
+    const tel = document.getElementById('telNumero').value;
+    const dddValido = dddsValidos.includes(ddd);
+    const telPreenchido = tel.length >= 8;
 
-  if (!dddsValidos.includes(dddDigitado)) {
-    alert('Erro: O DDD ' + dddDigitado + ' não existe no Brasil.');
-    formularioValido = false;
+    if (!mostrarErro('telNumero', 'erro-telefone', (!dddValido || !telPreenchido))) {
+      document.getElementById('telDDD').classList.add('input-erro');
+      formularioValido = false;
+  } else {
+      document.getElementById('telDDD').classList.remove('input-erro');
   }
 
-  const dia = document.querySelector('input[placeholder='Dia']').value;
-  const mes = document.querySelector('input[placeholder='Mês']').value;
-  const ano = document.querySelector('input[placeholder='Ano']').value;
-
-  if (!validaDataReal(dia, mes, ano)) {
-    alert('Erro; Data de nascimento inválida (Ex. 30 de Fevereiro -> Não existe).');
-    formularioValido = false;
+    if (document.getElementById('serie').value === '') {
+      mostrarErro('serie', 'erro-serie', true);
+      formularioValido = false;
+  } else {
+      mostrarErro('serie', 'erro-serie', false);
   }
 
-  if (formularioValido) {
-    alert('Sucesso! Formulário enviado para a secretaria.');
-    formulario.submit();
+    const turnoMarcado = document.querySelector('input[name='turno']:checked');
+    const msgTurno = document.getElementById('erro-turno');
+    if (!turnoMarcado) {
+      msgTurno.classList.add('ativo');
+      formularioValido = false;
+  } else {
+      msgTurno.classList.remove('ativo');
   }
-});
 
-function validaDataReal(d, m, a) {
-  const dia = parseInt(d);
-  const mes = parseInt(m);
-  const ano = parseInt(a);
-
-  const dataTeste = new Date(ano, mes - 1, dia);
-
-  if (dataTeste.getDate() !== dia ||
-      dataTeste.getMonth() !== mes ||
-      dataTeste.getFullYear() !== ano) {
-    return false;
-}
-
-if (ano < 1900 || ano > 2025) return false;
-
-return true;  
-}
-
-const inputs = document.querySelectorAll('input');
-inputs.forEach(input => {
-  input.addEventListener('focus', () => input.classList.remove('campo-erro'));
+    if (formularioValido) {
+      document.getElementById('tela-formulario').style.display = 'none';
+      document.getElementById('tela-sucesso').style.display = 'block';
+  } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  } 
 });
