@@ -15,39 +15,39 @@
       <div class='form-grid'>
 
         <label>Nome do Aluno:</label>
-        <input type='text' placeholder='Nome Completo' required>
+        <input type='text' placeholder='Nome Completo'>
       <div class='mensagem-erro' id='erro-nomeAluno'>Digite o nome completo (mínimo 2 termos).</div>
 
         <label>Nascimento:</label>
        <div class='input-group'> 
-        <input type='text' class='pequeno' placeholder='Dia' required>
+        <input style='width: 10px;' type='text' class='pequeno' placeholder='Dia'>
         <span>/</span>
-        <input type='text' class='pequeno' placeholder='Mês' required>
+        <input style='width: 10px;' type='text' class='pequeno' placeholder='Mês'>
         <span>/</span>
-        <input type='text' class='pequeno' placeholder='Ano' required>
+        <input style='width: 10px;' type='text' class='pequeno' placeholder='Ano' >
       </div>
       <div class='mensagem-erro' id='erro-data'>Data inválida (Ex: 31/02 não existe).</div>
 
      
         <label>Nome do Pai:</label>
-        <input type='text' id='nomePai' placeholder='Nome e Sobrenome' required>
+        <input type='text' id='nomePai' placeholder='Nome e Sobrenome'>
         <div class='mensagem-erro' id='erro-nomePai'>Digite o nome completo do pai.</div>
       
         <label>Nome da Mãe:</label>
-        <input type='text' id='nomeMae' placeholder='Nome e Sobrenome' required>
+        <input type='text' id='nomeMae' placeholder='Nome e Sobrenome'>
         <div class='mensagem-erro' id='erro-nomeMae'>Digite o nome do completo da mãe.</div>
       
         <label>Telefone:</label>
         <div class='input-group'>
-          <input type='number' id='telDDD' class='input-pequeno' placeholder='DDD' required>
-          <input type='number' id='telNumero' class='input-medio' placeholder='Ex: (99) 99999-9999' required>
+          <input type='number' id='telDDD' class='input-pequeno' placeholder='DDD'>
+          <input type='number' id='telNumero' class='input-medio' placeholder='Ex: (99) 99999-9999'>
           <span style='font-size: 0.8rem; margin-left: 10px;'>Ramal:</span>
           <input type='number' id='telRamal' class='input-pequeno' placeholder='Ex: (Op)'>
         </div>
       <div class='mensagem-erro' id='erro-telefone'>DDD inválido ou telefone incompleto.</div>
 
         <label>Email:</label>
-        <input id='campo-email' placeholder='Ex: seunome@gmail.com' required>
+        <input id='campo-email' placeholder='Ex: seunome@gmail.com'>
         <div class='mensagem-erro' id='erro-email'>O email deve ter @ (Arroba) e . (ponto final)</div>
         
       </div>
@@ -58,7 +58,7 @@
       <div class='form-grid'>
 
           <label>Série:</label>
-            <select id='campo-serie' required>
+            <select id='campo-serie'>
               <option value='' disabled selected>Selecione...</option>
               <option value='pre'>Pré-escolar</option>
               <option value='1ano'>1° Ano</option>
