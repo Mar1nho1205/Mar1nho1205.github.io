@@ -61,7 +61,7 @@ label {
   font-size: 0.9rem;
 }
 
-input[type='text'], input[type='email'], input[type='number'], select {
+input[type='text'], input[type='number'], select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
