@@ -1,1 +1,49 @@
+<head>
+  <title>Controle de Gastos</title>
+</head>
+<body>
+  <div class='info'>
+     <label>Categoria:</label>
+  <select id='categoria'>
+    <option value='' disabled selected>Selecione uma categoria</option>
+    <option value='mercado'>Mercado</option>
+    <option value='transporte'>Transporte</option>
+    <option value='restauarnte'>Restaurante</option>
+    <option value='roupas'>Roupas</option>
+    <option value='contas'>Contas</option>
+    </select>
 
+    <label>Valor:</label>
+    <input id='valor' type='number' placeholder='Ex: 79,90'>
+
+    <label>Data:</label>
+    <input id='data' type='text' placeholder='Ex: 22/03/2025'>
+
+    <div class='botoes-container'>
+      <button type='button'>Adicionar</button>
+      <button type='submit'>Calcular</button>
+    </div>
+  </div>
+  <div class='extrato'>
+    <table>
+      <th>Extrato Bancário</th>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+ 
+  
+</body>
