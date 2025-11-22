@@ -48,7 +48,7 @@ function atualizarTabela() {
   });
 }
 
-function calulcarResumo() {
+function calcularResumo() {
   const areaResumo = document.getElementById('area-resumo');
   let htmlResumo = '<h3>Resumo</h3>';
 
