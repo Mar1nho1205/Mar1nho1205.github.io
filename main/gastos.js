@@ -39,7 +39,7 @@ function atualizarTabela() {
     const linha = ` 
     <tr>
       <td>${gasto.categoria}</td>
-      <td>${data}</td>
+      <td>${dataFormatada}</td>
       <td>${valorFormatado}</td>
     </tr>
     `;
