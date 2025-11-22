@@ -15,16 +15,17 @@ function adicionarGasto() {
     return;
   }
 
-  const valorNumero = parseFloat(valor) {
+  const valorNumero = parseFloat(valor);
+  
     if (valorNumero <= 0) {
       alert('Erro: o valor deve ser maior que 0.');
       inputValor.classList.add('erro-input');
-      inputValoe.focus();
+      inputValor.focus();
       return;
     } else {
       inputValor.classList.remove('erro-input');
     }
-  }
+  
 
   if (!dataEhValida(data)) {
     alert('Erro: Data inválida ou fora do período permitido (2000 a 2100).');
