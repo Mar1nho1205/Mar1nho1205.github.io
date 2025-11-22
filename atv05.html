@@ -9,22 +9,22 @@
   <h1>Escola Virtual</h1>
   <h2>Formulário de Pré-Matrícula</h2>
 
-  <form id='form-matricula novalidate'>
+  <form id='form-matricula' novalidate>
     <fieldset>
       <legend>Dados Pessoais</legend>
       <div class='form-grid'>
 
         <label>Nome do Aluno:</label>
-        <input type='text' placeholder='Nome Completo'>
+        <input type='text' id='nomeAluno' placeholder='Nome Completo'>
       <div class='mensagem-erro' id='erro-nomeAluno'>Digite o nome completo (mínimo 2 termos).</div>
 
         <label>Nascimento:</label>
        <div class='input-group'> 
-        <input style='width: 50px;' type='text' class='pequeno' placeholder='Dia'>
+        <input style='width: 50px;' type='text' class='pequeno' id='nascDia' placeholder='Dia'>
         <span>/</span>
-        <input style='width: 50px;' type='text' class='pequeno' placeholder='Mês'>
+        <input style='width: 50px;' type='text' class='pequeno' id='nascMes' placeholder='Mês'>
         <span>/</span>
-        <input style='width: 50px;' type='text' class='pequeno' placeholder='Ano' >
+        <input style='width: 50px;' type='text' class='pequeno' id='nascAno' placeholder='Ano' >
       </div>
       <div class='mensagem-erro' id='erro-data'>Data inválida (Ex: 31/02 não existe).</div>
 
@@ -58,7 +58,7 @@
       <div class='form-grid'>
 
           <label>Série:</label>
-            <select id='campo-serie'>
+            <select id='serie'>
               <option value='' disabled selected>Selecione...</option>
               <option value='pre'>Pré-escolar</option>
               <option value='1ano'>1° Ano</option>
