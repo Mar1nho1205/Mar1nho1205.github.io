@@ -22,11 +22,11 @@ function mostrarErro(idElemento, idMensagem, mostrar) {
   }
 
   if (mostrar) {
-    input.classList.add('input-erro');
+    elemento.classList.add('input-erro');
     msg.classList.add('ativo');
     return false;
   } else {
-    input.classList.remove('input-erro');
+    elemento.classList.remove('input-erro');
     msg.classList.remove('ativo');
     return true;
   }
