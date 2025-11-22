@@ -37,7 +37,7 @@ form.addEventListener('submit', function(e) {
   let formularioValido = true;
 
   const validaNome = (idInput, idMsg) => {
-    const elemento = document.getElementeById('idInput')
+    const elemento = document.getElementeById(idInput)
     if(!elemento) return false;
     
     const valor = document.getElementById(idInput).value.trim();
