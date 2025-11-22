@@ -13,10 +13,10 @@ checksAtividades.forEach(check => {
 });
 
 function mostrarErro(idElemento, idMensagem, mostrar) {
-  const fg = document.getElementById(idElemento);
+  const elemento = document.getElementById(idElemento);
   const msg = document.getElementById(idMensagem);
 
-  if (!input || !erro) {
+  if (!elemento || !msg) {
     console.error('ERRO DE CÓDIGO: ID não encontrado ->', idInput, idMensagem);
     return true;
   }
