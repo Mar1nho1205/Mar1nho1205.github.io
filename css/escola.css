@@ -57,7 +57,7 @@ label {
   text-align: rignt;
   font-weight: 600;
   color: #555;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 input[type='text'], input[type='number'], input[id='email'], select {
