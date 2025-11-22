@@ -21,7 +21,7 @@ function adicionarGasto() {
       inputValor.classList.add('erro-input');
       inputValoe.focus();
       return;
-    } else {t
+    } else {
       inputValor.classList.remove('erro-input');
     }
   }
