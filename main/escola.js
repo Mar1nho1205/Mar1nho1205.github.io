@@ -64,7 +64,6 @@ form.addEventListener('submit', function(e) {
   const dataObj = new Date(ano, mes - 1, dia);
   const dataReal = (dataObj.getFullYear() === ano && (dataObj.getMonth() + 1) === mes && dataObj.getDate() === dia);
 
-  const msgData = document.getElementById('erro-data');
   if (!dataReal || ano < 1900 || ano > 2025) {
     document.getElementById('nascDia').classList.add('input-erro');
     document.getElementById('nascMes').classList.add('input-erro');
