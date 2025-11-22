@@ -2,13 +2,36 @@ let listaGastos = [];
 
 function adicionarGasto() {
 
-  const categoria = document.getElementById('categoria').value;
-  const valor = document.getElementById('valor').value;
-  const data = document.getElementById('data').value;
+  const inputCategoria = document.getElementById('categoria');
+  const inputValor = document.getElementById('valor');
+  const inputData = document.getElementById('data');
+
+  const categoria = inputCategoria.value;
+  const valor = inputValor.value;
+  const data = inputData.value;
 
   if (categoria === "" || valor === "" || data === "") {
-    alert('Preencha todos os campos')
+    alert('Preencha todos os campos.')
     return;
+  }
+
+  const valorNumero = parseFloat(valor) {
+    if (valorNumero <= 0) {
+      alert('Erro: o valor deve ser maior que 0.');
+      inputValor.classList.add('erro-input');
+      inputValoe.focus();
+      return;
+    } else {t
+      inputValor.classList.remove('erro-input');
+    }
+  }
+
+  if (!dataEhValida(data)) {
+    alert('Erro: Data inválida ou fora do período permitido (2000 a 2100).');
+    inputData.classList.add('erro-input');
+    return;
+  } else {
+    inputData.classList.remove('erro-input');
   }
 
   const novoGasto = {
@@ -21,6 +44,23 @@ function adicionarGasto() {
 
   atualizarTabela();
   limparCampos();
+}
+
+function dataEhValida() {
+  const partes = dataString.split('-');
+  const ano = parseInt(partes[0]);
+  const mes = parseInt(partes[1]);
+  const dia = parseInt(partes[2]);
+
+  if (ano < 2000 || ano > 2100) return false;
+
+  const dataObj = new Date(ano, mes - 1, dia);
+  if (dataObj.getFullYear() !== ano ||
+     (dataObj.getMonth() + 1) !== mes ||
+      dataObj.getDate() !== dia) {
+    return false;
+      }
+  return true;
 }
 
 function limparCampos() {
@@ -50,6 +90,12 @@ function atualizarTabela() {
 
 function calcularResumo() {
   const areaResumo = document.getElementById('area-resumo');
+
+  if (listaGastos.length === 0) {
+    areaResumo.innerHTML = '<p>Nenhum gasto lançado ainda.</p>';
+    return;
+  }
+  
   let htmlResumo = '<h3>Resumo</h3>';
 
   const totalGeral = listaGastos.reduce((acumulador, item) => acumulador + item.valor, 0);
@@ -58,7 +104,12 @@ function calcularResumo() {
   let totaisPorMes = {};
 
   listaGastos.forEach(gasto => {
+    if (!gasto.data.includes('-')) return;
+
+    const partesData = gasto.data.split('-');
     const mes = gasto.data.split('-')[1];
+
+    if (!mes) return;
 
     if (!totaisPorMes[mes]) {
       totaisPorMes[mes] = 0;
@@ -70,6 +121,8 @@ function calcularResumo() {
   for (let mes in totaisPorMes) {
     htmlResumo += `<p>Total no Mês ${mes}: ${formatarMoeda(totaisPorMes[mes])}</p>`;
   }
+
+  htmlResumo += '<hr>';
 
   let totaisPorCategoria = {};
 
