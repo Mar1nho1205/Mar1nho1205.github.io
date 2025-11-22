@@ -20,14 +20,19 @@
     <input id='data' type='text' placeholder='Ex: 22/03/2025'>
 
     <div class='botoes-container'>
-      <button type='button'>Adicionar</button>
-      <button type='submit'>Calcular</button>
+      <button id='btn-adicionar' type='button'>Adicionar</button>
+      <button id='btn-calcular' type='submit'>Calcular</button>
     </div>
   </div>
   <div class='extrato'>
     <table>
-      <th>Extrato Bancário</th>
-      <tr>
+      <thead>
+        <tr>
+         <th>Extrato Bancário</th> 
+        </tr>
+      </thead>
+      <tbody id='tabela-corpo'>
+         <tr>
         <td></td>
         <td></td>
         <td></td>
@@ -42,7 +47,9 @@
         <td></td>
         <td></td>
       </tr>
+      </tbody>
     </table>
   </div>
+  <div id='area-resumo'></div>
  <script src='main/gastos.js'></script>
 </body>
