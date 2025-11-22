@@ -21,7 +21,7 @@ function mostrarErro(idElemento, idMensagem, mostrar) {
     return true;
   }
 
-  if (temErro) {
+  if (mostrar) {
     input.classList.add('input-erro');
     msg.classList.add('ativo');
     return false;
@@ -37,8 +37,14 @@ form.addEventListener('submit', function(e) {
   let formularioValido = true;
 
   const validaNome = (idInput, idMsg) => {
+    const elemento = document.getElementeById('idInput')
+    if(!elemento) return false;
+    
     const valor = document.getElementById(idInput).value.trim();
     const termos = valor.split(/\s+/).filter(t => t.length > 0);
+
+    const temErroNoNome = termos.length < 2;
+    
     return mostrarErro(idInput, idMsg, termos.length < 2);
   };
 
@@ -53,6 +59,7 @@ form.addEventListener('submit', function(e) {
   const dia = parseInt(document.getElementById('nascDia').value);
   const mes = parseInt(document.getElementById('nascMes').value);
   const ano = parseInt(document.getElementById('nascAno').value);
+  const msgData = document.getElementeById('erro-data');
 
   const dataObj = new Date(ano, mes - 1, dia);
   const dataReal = (dataObj.getFullYear() === ano && (dataObj.getMonth() + 1) === mes && dataObj.getDate() === dia);
