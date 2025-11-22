@@ -28,7 +28,7 @@ function mostrarErro(idElemento, idMensagem, mostrar) {
   } else {
     input.classList.remove('input-erro');
     msg.classList.remove('ativo');
-    return: true;
+    return true;
   }
 } 
 
