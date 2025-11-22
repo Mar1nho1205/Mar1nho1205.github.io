@@ -35,7 +35,7 @@ function atualizarTabela() {
 
   listaGastos.forEach(gasto => {
     const valorFormatado = gasto.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
-    const data = gasto.data;
+    const dataFormatada = gasto.data.split('-').reverse().join('/');
     const linha = ` 
     <tr>
       <td>${gasto.categoria}</td>
