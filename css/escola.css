@@ -106,17 +106,22 @@ input[type='number']::-webkit-inner-spin-button { -webkit-appearance: none; marg
 }
 
 .mensagem-erro {
-  grid-column: 2;
+  display: none;
   color: #d32f2f;
-  font-size: 0.8rem;
-  height: 0;
-  overflow: hidden;
-  transition: height 0.3s
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 5px;
+  grid-column: 2;
 }
 
-.mensagem-erro.ativo: {
-  height: 20px;
-  margin-bottom: 5px;
+.mensagem-erro.ativo {
+  display: block;
+  animation: apareSuave 0.3s ease-in-out;
+}
+
+@keyframes apareceSuave {
+  from { opcity: 0; transform: translateY(-5px); }
+  to { opcity: 1; transform: translateY(0); }
 }
 
 #tela-sucesso {
