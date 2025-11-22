@@ -59,7 +59,7 @@ form.addEventListener('submit', function(e) {
   const dia = parseInt(document.getElementById('nascDia').value);
   const mes = parseInt(document.getElementById('nascMes').value);
   const ano = parseInt(document.getElementById('nascAno').value);
-  const msgData = document.getElementeById('erro-data');
+  const msgData = document.getElementById('erro-data');
 
   const dataObj = new Date(ano, mes - 1, dia);
   const dataReal = (dataObj.getFullYear() === ano && (dataObj.getMonth() + 1) === mes && dataObj.getDate() === dia);
