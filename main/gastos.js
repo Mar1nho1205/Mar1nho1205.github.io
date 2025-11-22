@@ -8,6 +8,6 @@ function adicionarGasto() {
 
   if (categoria === "" || valor === "" || data === "") {
     alert('Preencha todos os campos')
-    return
+    return;
   }
 }
