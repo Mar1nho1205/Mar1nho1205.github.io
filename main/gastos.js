@@ -16,16 +16,16 @@ function adicionarGasto() {
   }
 
   const valorNumero = parseFloat(valor);
-  
-    if (valorNumero <= 0) {
-      alert('Erro: o valor deve ser maior que 0.');
-      inputValor.classList.add('erro-input');
-      inputValor.focus();
-      return;
-    } else {
-      inputValor.classList.remove('erro-input');
-    }
-  
+
+  if (valorNumero <= 0) {
+    alert('Erro: o valor deve ser maior que 0.');
+    inputValor.classList.add('erro-input');
+    inputValor.focus();
+    return;
+  } else {
+    inputValor.classList.remove('erro-input');
+  }
+
 
   if (!dataEhValida(data)) {
     alert('Erro: Data inválida ou fora do período permitido (2000 a 2100).');
@@ -48,19 +48,26 @@ function adicionarGasto() {
 }
 
 function dataEhValida(dataString) {
-  const partes = dataString.split('-');
-  const ano = parseInt(partes[0]);
-  const mes = parseInt(partes[1]);
-  const dia = parseInt(partes[2]);
+  if (!/^\d{2}\/\d{2}\/\d{4}$/.test(dataString)) {
+    console.log('Erro: Formato inválido. Use DD/MM/AAAA.');
+    return false;
+  }
+
+  const partesData = dataString.split('/');
+  const dia = parseInt(partesData[0]);
+  const mes = parseInt(partesData[1]);
+  const ano = parseInt(partesData[2]);
 
   if (ano < 2000 || ano > 2100) return false;
 
   const dataObj = new Date(ano, mes - 1, dia);
+
   if (dataObj.getFullYear() !== ano ||
-     (dataObj.getMonth() + 1) !== mes ||
+      dataObj.getMonth() + 1 !== mes ||
       dataObj.getDate() !== dia) {
     return false;
-      }
+  }
+
   return true;
 }
 
@@ -75,12 +82,12 @@ function atualizarTabela() {
   tbody.innerHTML = '';
 
   listaGastos.forEach(gasto => {
+    const dataParaMostrar = gasto.data;
     const valorFormatado = gasto.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
-    const dataFormatada = gasto.data.split('-').reverse().join('/');
     const linha = ` 
     <tr>
       <td>${gasto.categoria}</td>
-      <td>${dataFormatada}</td>
+      <td>${dataParaMostrar}</td>
       <td>${valorFormatado}</td>
     </tr>
     `;
@@ -93,11 +100,15 @@ function calcularResumo() {
   const areaResumo = document.getElementById('area-resumo');
 
   if (listaGastos.length === 0) {
-    areaResumo.innerHTML = '<p>Nenhum gasto lançado ainda.</p>';
+    alert('Nenhum gasto registrado para calcular o resumo.');
     return;
   }
-  
-  let htmlResumo = '<h3>Resumo</h3>';
+
+  let htmlResumo = `
+    <button onclick="fecharResumo()" class="btn-fechar">X</button>
+    <h2 style="text-align: center; color: #2942e7;">Resumo Financeiro</h2>
+    <hr>
+  `;
 
   const totalGeral = listaGastos.reduce((acumulador, item) => acumulador + item.valor, 0);
   htmlResumo += `<p>Total: ${formatarMoeda(totalGeral)}</p>`;
@@ -105,10 +116,9 @@ function calcularResumo() {
   let totaisPorMes = {};
 
   listaGastos.forEach(gasto => {
-    if (!gasto.data.includes('-')) return;
+    if (!gasto.data.includes('/')) return;
 
-    const partesData = gasto.data.split('-');
-    const mes = gasto.data.split('-')[1];
+    const mes = gasto.data.split('/')[1];
 
     if (!mes) return;
 
@@ -132,7 +142,11 @@ function calcularResumo() {
     if (!totaisPorCategoria[cat]) {
       totaisPorCategoria[cat] = 0;
     }
-  totaisPorCategoria[cat] += gasto.valor;
+    totaisPorCategoria[cat] += gasto.valor;
+
+    areaResumo.innerHTML = htmlResumo;
+
+    areaResumo.style.display = 'block';
   });
 
   for (let cat in totaisPorCategoria) {
@@ -144,6 +158,16 @@ function calcularResumo() {
 
 function formatarMoeda(valor) {
   return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+function fecharResumo() {
+  const areaResumo = document.getElementById('area-resumo');
+  areaResumo.style.display = 'none';
+
+  listaGastos = [];
+  atualizarTabela();
+
+  document.getElementById('categoria').value = "";
 }
 
 window.addEventListener('load', () => {

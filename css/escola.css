@@ -6,6 +6,7 @@ body {
   margin: 0;
 }
 
+
 .container {
   background: white;
   width: 100%;
@@ -54,7 +55,7 @@ legend {
 }
 
 label {
-  text-align: rignt;
+  text-align: right;
   font-weight: 600;
   color: #555;
   font-size: 1rem;
@@ -70,7 +71,7 @@ input[type='text'], input[type='number'], input[id='email'], select {
 }
 
 input:focus select:focus {
-  ooutline: none;
+  outline: none;
   border-color: #3949ab;
   box-shadow: 0 0 0 3px rgba(57, 73, 171, 0.1);
 }

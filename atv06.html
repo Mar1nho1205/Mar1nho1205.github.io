@@ -2,41 +2,48 @@
   <title>Controle de Gastos</title>
   <link rel='stylesheet' href='css/gasto.css'>
 </head>
+
 <body>
-  <div class='info'>
-     <label>Categoria:</label>
-  <select id='categoria'>
-    <option value='' disabled selected>Selecione uma categoria</option>
-    <option value='Mercado'>Mercado</option>
-    <option value='Transporte'>Transporte</option>
-    <option value='Restauarnte'>Restaurante</option>
-    <option value='Roupas'>Roupas</option>
-    <option value='Contas'>Contas</option>
-    </select>
+  <div class="container">
+    <div class='total'>
+      <div class='info'>
+        <label>Categoria:</label>
+        <select id='categoria'>
+          <option value='' disabled selected>Selecione uma categoria</option>
+          <option value='Mercado'>Mercado</option>
+          <option value='Transporte'>Transporte</option>
+          <option value='Restauarnte'>Restaurante</option>
+          <option value='Roupas'>Roupas</option>
+          <option value='Contas'>Contas</option>
+        </select>
 
-    <label>Valor:</label>
-    <input id='valor' type='number' placeholder='Ex: 79,90'>
+        <label>Valor:</label>
+        <input id='valor' type='number' placeholder='Ex: 79,90'>
 
-    <label>Data:</label>
-    <input id='data' type='text' placeholder='Ex: 22/03/2025'>
+        <label>Data:</label>
+        <input id='data' type='text' placeholder='Ex: 22/03/2025'>
 
-    <div class='botoes-container'>
-      <button id='btn-adicionar' type='button'>Adicionar</button>
-      <button id='btn-calcular' type='submit'>Calcular</button>
+        <br>
+
+        <div class='botoes-container'>
+          <button id='btn-adicionar' type='button'>Adicionar</button>
+          <button id='btn-calcular' type='submit'>Calcular</button>
+        </div>
+      </div>
+      <div class='extrato'>
+        <table>
+          <thead>
+            <tr>
+              <th>Extrato Bancário</th>
+            </tr>
+          </thead>
+          <tbody id='tabela-corpo'>
+
+          </tbody>
+        </table>
+      </div>
     </div>
+     <div id='area-resumo'></div>
   </div>
-  <div class='extrato'>
-    <table>
-      <thead>
-        <tr>
-         <th>Extrato Bancário</th> 
-        </tr>
-      </thead>
-      <tbody id='tabela-corpo'>
-
-      </tbody>
-    </table>
-  </div>
-  <div id='area-resumo'></div>
- <script src='main/gastos.js'></script>
+  <script src='main/gastos.js'></script>
 </body>
