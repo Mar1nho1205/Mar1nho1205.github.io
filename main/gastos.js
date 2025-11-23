@@ -47,8 +47,8 @@ function adicionarGasto() {
   limparCampos();
 }
 
-function dataEhValida() {
-  const partes = data.split('-');
+function dataEhValida(dataString) {
+  const partes = dataString.split('-');
   const ano = parseInt(partes[0]);
   const mes = parseInt(partes[1]);
   const dia = parseInt(partes[2]);
