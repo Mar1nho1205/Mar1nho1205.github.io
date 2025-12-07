@@ -8,6 +8,15 @@
   <link rel='icon' href='img/passion.ico'>
 
   <style>
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section {
+      scroll-margin-top: 50px;
+    }
+
     .bg-passion {
       background-color: #e0af30 !important;
     }
@@ -19,6 +28,17 @@
       --bs-accordion-active-bg: #f7e8bc;
       /* Um dourado/amarelo mais claro para o fundo */
       --bs-accordion-active-color: #000;
+    }
+
+    .navbar {
+      padding-top: 5px !important;
+      padding-bottom: 5px !important;
+      min-height: 60px;
+    }
+
+    .navbar-nav .nav-link {
+      padding-top: 0;
+      padding-bottom: 0;
     }
 
     .img-borda-dourada {
@@ -41,24 +61,44 @@
       object-position: top center;
     }
 
+    .cardapio {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+
     .item-menu {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border: 2px solid #daa520;
-      padding: 10px;
-      gap: 15px
+      padding: 15px 0;
+      border-bottom: 1px solid #e6e6e6;
+      width: 100%;
+    }
+
+    .lado-esquerdo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+      padding-right: 20px;
     }
 
     .descricao {
       flex: 1;
     }
 
+    .descricao p {
+      margin-bottom: 0;
+    }
+
     .container-preco {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      min-width: fit-content
+      flex-shrink: 0;
+      margin-left: auto;
     }
 
     .preco {
@@ -92,10 +132,10 @@
 
 
   <!-- ================== NAVBAR ================== -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-passion sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-passion sticky-top py-2">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <h3>Passion doré</h3>
+      <a class="navbar-brand fs-3 fw-bold" href="#">
+        Passion doré
       </a>
 
 
@@ -149,7 +189,8 @@
           </div>
 
           <div class="carousel-item">
-            <img src="../img/Gemini_Generated_Image_y8x2lmy8x2lmy8x2.png" class="d-block rounded img-carrossel" alt="...">
+            <img src="../img/Gemini_Generated_Image_y8x2lmy8x2lmy8x2.png" class="d-block rounded img-carrossel"
+              alt="...">
           </div>
 
           <div class="carousel-item">
@@ -200,23 +241,76 @@
           </h2>
           <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
             data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body d-flex align-items-center">
+            <div class="accordion-body">
+              <div class="cardapio">
+                <div class="item-menu">
 
-              <div class="item-menu">
-                 <img src="../img/escargots.jpg" class="img-fluid img-borda-dourada rounded" alt="Escargots"
-                style="max-width: 170px; height: auto;">
+                  <div class="lado-esquerdo">
+                    <div class="imagem">
+                      <img src="../img/escargots.jpg" class="img-fluid img-borda-dourada rounded" alt="Escargots"
+                        style="max-width: 170px; height: auto;">
+                    </div>
+
+                    <div class="descricao">
+                      <p class="card-text ms-3 mb-0"><strong>Escargots:</strong><br>
+                        servidos dentro de conchas com manteiga de alho e ervas.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="container-preco">
+                    <span class="preco">R$35,90</span>
+                    <button type="button" class="btn-compra">Comprar</button>
+                  </div>
+                </div>
+
+                <div class="item-menu">
+
+                  <div class="lado-esquerdo">
+                    <div class="imagem">
+                      <img src="../img/Soupe-a-loignon-Accueil-Potager-City-1024x768.jpg"
+                        class="img-fluid img-borda-dourada rounded" alt="Escargots"
+                        style="max-width: 170px; height: auto;">
+                    </div>
+
+                    <div class="descricao">
+                      <p class="card-text ms-3 mb-0"><strong>Soupe à l’oignon:</strong><br>
+                        A sopa de cebola francesa é feita com caldo de carne e cebola dourada,<br>
+                        acompanhada de croutons gratinados e queijo por cima.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="container-preco">
+                    <span class="preco">R$44,90</span>
+                    <button type="button" class="btn-compra">Comprar</button>
+                  </div>
+                </div>
+
+                <div class="item-menu">
+
+                  <div class="lado-esquerdo">
+                    <div class="imagem">
+                      <img src="../img/Rillette-Mon-Panier-Latin-1024x684.png"
+                        class="img-fluid img-borda-dourada rounded" alt="Escargots"
+                        style="max-width: 170px; height: auto;">
+                    </div>
+
+                    <div class="descricao">
+                      <p class="card-text ms-3 mb-0"><strong>Rillettes:</strong><br>
+                        As Rillettes são um tipo de patê de carne desfiada e cozida lentamente,<br>
+                        geralmente de porco, servida como uma deliciosa entrada da culinária francesa.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="container-preco">
+                    <span class="preco">R$49,90</span>
+                    <button type="button" class="btn-compra">Comprar</button>
+                  </div>
+                </div>
+
               </div>
-
-              <div class="descricao">
-                 <p class="card-text ms-3 mb-0">Escargots: servidos dentro de conchas com manteiga de alho e ervas.
-              </p>
-              </div>  
-             
-              <div class="container-preco">
-                <span class="preco">R$35,90</span>
-                <button type="button" class="btn-compra">Comprar</button>
-              </div>
-
             </div>
           </div>
           <div class="accordion-item">
@@ -229,12 +323,37 @@
             </h2>
             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
               data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the second item’s accordion body. Let’s imagine this being
-                filled with some actual content.
+              <div class="accordion-body">
+                <div class="cardapio">
+
+                  <div class="item-menu">
+
+                    <div class="lado-esquerdo">
+                      <div class="imagem">
+                        <img src="../img/ratatouille.jpg"
+                          class="img-fluid img-borda-dourada rounded" alt="Escargots"
+                          style="max-width: 170px; height: auto;">
+                      </div>
+
+                      <div class="descricao">
+                        <p class="card-text ms-3 mb-0"><strong>Ratatouille:</strong><br>
+                          Clássica receita francesa provençal de legumes cozidos do século XVIII.<br>
+                          Prato perfeito para 4-5 pessoas.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="container-preco">
+                      <span class="preco">R$129,90</span>
+                      <button type="button" class="btn-compra">Comprar</button>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
+
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed bg-accordion" type="button" data-bs-toggle="collapse"
@@ -252,6 +371,7 @@
               </div>
             </div>
           </div>
+
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed bg-accordion" type="button" data-bs-toggle="collapse"
@@ -267,30 +387,31 @@
               </div>
             </div>
           </div>
+
+
+          <!-- TODO: Criar estrutura para categorias (entradas, principais, sobremesas, bebidas) -->
+          <p class="mt-3">
+            [Categorias do menu.] Aqui os alunos devem organizar o cardápio usando
+            componentes do Bootstrap, por exemplo: abas (nav-tabs), cards, listas
+            ou outro componente adequado para:
+          </p>
+          <ul>
+            <li>Entradas</li>
+            <li>Pratos principais</li>
+            <li>Sobremesas</li>
+            <li>Bebidas</li>
+          </ul>
+
+
+          <!-- TODO: Adicionar itens com descrições, preços e imagens -->
+          <p class="mt-3">
+            [Detalhes dos itens.] Cada item deve ter nome, descrição, preço e,
+            opcionalmente, uma imagem. Destaque também os "Especiais do Dia" ou
+            "Pratos sazonais".
+          </p>
         </div>
-
-
-        <!-- TODO: Criar estrutura para categorias (entradas, principais, sobremesas, bebidas) -->
-        <p class="mt-3">
-          [Categorias do menu.] Aqui os alunos devem organizar o cardápio usando
-          componentes do Bootstrap, por exemplo: abas (nav-tabs), cards, listas
-          ou outro componente adequado para:
-        </p>
-        <ul>
-          <li>Entradas</li>
-          <li>Pratos principais</li>
-          <li>Sobremesas</li>
-          <li>Bebidas</li>
-        </ul>
-
-
-        <!-- TODO: Adicionar itens com descrições, preços e imagens -->
-        <p class="mt-3">
-          [Detalhes dos itens.] Cada item deve ter nome, descrição, preço e,
-          opcionalmente, uma imagem. Destaque também os "Especiais do Dia" ou
-          "Pratos sazonais".
-        </p>
       </div>
+    </div>
   </section>
 
 
