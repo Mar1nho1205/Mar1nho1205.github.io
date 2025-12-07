@@ -119,6 +119,53 @@
     .btn-compra:hover {
       background-color: #c49e1c;
     }
+
+    @media (max-width: 768px) {
+
+      .item-menu {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .lado-esquerdo {
+        flex-direction: column;
+        padding-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+      }
+
+      .lado-esquerdo .imagem img {
+        max-width: 100% !important;
+        width: 250px;
+        margin-bottom: 10px;
+      }
+
+      .descricao p {
+        margin-left: 0 !important;
+      }
+
+      .card-text.ms-3 {
+        margin-left: 0 !important;
+      }
+
+      .container-preco {
+        align-items: center;
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .img-carrosel {
+        height: 250px;
+      }
+
+      .preco {
+        font-size: 26px;
+        margin-bottom: 10px;
+      }
+
+    }
   </style>
 
 
@@ -330,15 +377,16 @@
 
                     <div class="lado-esquerdo">
                       <div class="imagem">
-                        <img src="../img/ratatouille.jpg"
+                        <img src="../img/magret-clementine-a.jpg.png"
                           class="img-fluid img-borda-dourada rounded" alt="Escargots"
                           style="max-width: 170px; height: auto;">
                       </div>
 
                       <div class="descricao">
-                        <p class="card-text ms-3 mb-0"><strong>Ratatouille:</strong><br>
-                          Clássica receita francesa provençal de legumes cozidos do século XVIII.<br>
-                          Prato perfeito para 4-5 pessoas.
+                        <p class="card-text ms-3 mb-0"><strong>Magret de Pato:</strong><br>
+                          Peito de um pato criado para a produção de foie gras, conhecido pela sua <br>
+                          carne macia e vermelha, recoberta por uma espessa camada de gordura saborosa.<br>
+                          Prato perfeito para 4 pessoas se deliciarem.
                         </p>
                       </div>
                     </div>
@@ -348,6 +396,7 @@
                       <button type="button" class="btn-compra">Comprar</button>
                     </div>
                   </div>
+
                 </div>
 
               </div>
