@@ -13,6 +13,10 @@
       scroll-behavior: smooth;
     }
 
+    body {
+      padding-top: 40px;
+    }
+
     section {
       scroll-margin-top: 50px;
     }
@@ -40,6 +44,7 @@
       padding-top: 0;
       padding-bottom: 0;
     }
+
 
     .img-borda-dourada {
       border: 4px solid #daa520;
@@ -165,6 +170,15 @@
         margin-bottom: 10px;
       }
 
+      .navbar-nav .nav-item {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 10px 0px;
+      }
+
+      .navbar-nav .nav-item:last-child {
+        border-bottom: none;
+      }
+
     }
   </style>
 
@@ -179,7 +193,7 @@
 
 
   <!-- ================== NAVBAR ================== -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-passion sticky-top py-2">
+  <nav class="navbar navbar-expand-lg navbar-light bg-passion fixed-top py-2">
     <div class="container">
       <a class="navbar-brand fs-3 fw-bold" href="#">
         Passion doré
@@ -377,9 +391,8 @@
 
                     <div class="lado-esquerdo">
                       <div class="imagem">
-                        <img src="../img/magret-clementine-a.jpg.png"
-                          class="img-fluid img-borda-dourada rounded" alt="Escargots"
-                          style="max-width: 170px; height: auto;">
+                        <img src="../img/magret-clementine-a.jpg.png" class="img-fluid img-borda-dourada rounded"
+                          alt="Escargots" style="max-width: 170px; height: auto;">
                       </div>
 
                       <div class="descricao">
@@ -622,9 +635,23 @@
     <small>© 2025 Passion doré - Todos os direitos reservados.</small>
   </footer>
 
-
   <!-- BOOTSTRAP JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const linksDoMenu = document.querySelectorAll('.navbar-nav .nav-link');
+
+    const menuColapsavel = document.getElementById('menuNavbar');
+
+    linksDoMenu.forEach((link) => {
+      link.addEventListener('click', () => {
+        if (menuColapsavel.classList.contains('show')) {
+          new bootstrap.Collapse(menuColapsavel, {
+            toggle: false
+          }).hide();
+        }
+      })
+    })
   </script>
 </body>
 
