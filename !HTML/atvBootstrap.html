@@ -16,12 +16,14 @@
       padding-top: 40px;
     }
 
-    html, body {
+    html,
+    body {
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
 
-    html::-webkit-scrollbar, body::-webkit-scrollbar {
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
       display: none;
     }
 
@@ -40,6 +42,69 @@
       --bs-accordion-active-bg: #f7e8bc;
       /* Um dourado/amarelo mais claro para o fundo */
       --bs-accordion-active-color: #000;
+    }
+
+    .bg-horario {
+      background-color: #ffd556;
+      padding: 10px;
+      border-radius: 8px 8px 0 0;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .bg-abertura {
+      background-color: #ffe28d;
+      padding: 10px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .bg-abertura .col {
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .bg-abertura .col:last-child {
+      border-right: none;
+    }
+
+    .bg-fechamento {
+      background-color: #ffe28d;
+      padding: 10px;
+      border-radius: 0 0 8px 8px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .bg-fechamento .col {
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .bg-fechamento .col:last-child {
+      border-right: none;
+    }
+
+    .bg-horario .col {
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .bg-horario .col:last-child {
+      border-right: none;
+    }
+
+    .bg-mobile-claro {
+      background-color: #ffe28d !important;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .bg-mobile-escuro {
+      background-color: #ffd556 !important;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .list-group-item {
+      background-color: transparent;
     }
 
     .navbar {
@@ -72,6 +137,25 @@
       height: 300px;
       object-fit: cover;
       object-position: top center;
+    }
+
+    #accordionPaneLsStayOpenExample {
+      border: 2px solid #daa520;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .accordion-item {
+      border: none;
+      border-bottom: 1px solid #daa520;
+    }
+
+    .accordion-item:last-child {
+      border-bottom: none;
+    }
+
+    .accordion-button {
+      border-radius: 0 !important;
     }
 
     .cardapio {
@@ -216,6 +300,7 @@
       <div class="collapse navbar-collapse" id="menuNavbar">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#horario">Horário</a></li>
           <li class="nav-item"><a class="nav-link" href="#cardapio">Cardápio</a></li>
           <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
           <li class="nav-item"><a class="nav-link" href="#reservas">Reservas</a></li>
@@ -280,68 +365,86 @@
       </div>
 
       <!-- TODO: Inserir horários de funcionamento (tabela ou lista) -->
-      <div class="container mt-4" style="max-width: 600px;">
-  
-  <div class="bg-passion text-center p-2 rounded-top">
-    <h5 class="mb-0 fw-bold">🕒 Horários de Funcionamento</h5>
-  </div>
-
-  <div class="border border-top-0 rounded-bottom p-3 bg-white shadow-sm">
-    
-    <div class="row py-2 border-bottom align-items-center">
-      <div class="col-5 text-end fw-bold">
-        Segunda-feira
-      </div>
-      <div class="col-7 text-danger">
-        Fechado
-      </div>
     </div>
+  </section>
+  <section id="horario" class="py-5">
+    <div class="container">
+      <h2 class="mb-3">Horário de funcionamento</h2>
 
-    <div class="row py-2 border-bottom align-items-center">
-      <div class="col-5 text-end fw-bold">
-        Terça a Quinta
-      </div>
-      <div class="col-7">
-        18:00 às 23:00
-      </div>
-    </div>
+      <div class="d-none d-md-block">
+        <div class="row text-center bg-horario fw-bold">
+          <div class="col">---</div>
+          <div class="col">Seg</div>
+          <div class="col">Ter</div>
+          <div class="col">Qua</div>
+          <div class="col">Qui</div>
+          <div class="col">Sex</div>
+          <div class="col">Sáb</div>
+          <div class="col">Dom</div>
+        </div>
 
-    <div class="row py-2 border-bottom align-items-center">
-      <div class="col-5 text-end fw-bold">
-        Sexta-feira
-      </div>
-      <div class="col-7">
-        18:00 às 00:00
-      </div>
-    </div>
+        <div class="row text-center bg-abertura py-2">
+          <div class="col fw-bold">Abertura</div>
+          <div class="col text-muted">-</div>
+          <div class="col">18:00</div>
+          <div class="col">18:00</div>
+          <div class="col">18:00</div>
+          <div class="col">18:00</div>
+          <div class="col">12:00</div>
+          <div class="col">12:00</div>
+        </div>
 
-    <div class="row py-2 border-bottom align-items-center">
-      <div class="col-5 text-end fw-bold">
-        Sábado
+        <div class="row text-center bg-fechamento py-2">
+          <div class="col fw-bold">Fechamento</div>
+          <div class="col text-muted">-</div>
+          <div class="col">23:00</div>
+          <div class="col">23:00</div>
+          <div class="col">23:00</div>
+          <div class="col">00:00</div>
+          <div class="col">00:00</div>
+          <div class="col">16:00</div>
+        </div>
       </div>
-      <div class="col-7">
-        12:00 - 15:00 <br>
-        19:00 - 00:00
-      </div>
-    </div>
 
-    <div class="row py-2 align-items-center">
-      <div class="col-5 text-end fw-bold">
-        Domingo
-      </div>
-      <div class="col-7">
-        12:00 às 16:00
-      </div>
-    </div>
+      <div class="d-block d-md-none">
+        <div class="card shadow-sm border-warning">
+          <ul class="list-group list-group-flush text-center">
 
-  </div>
-</div>
+            <li class="list-group-item bg-mobile-escuro">
+              <span class="fw-bold d-block text-passion">Segunda-feira</span>
+              <span class="text-danger">Fechado</span>
+            </li>
+
+            <li class="list-group-item bg-mobile-claro">
+              <span class="fw-bold d-block text-passion">Terça a Quinta</span>
+              18:00 às 23:00
+            </li>
+
+            <li class="list-group-item bg-mobile-escuro">
+              <span class="fw-bold d-block text-passion">Sexta-feira</span>
+              18:00 à 00:00
+            </li>
+
+            <li class="list-group-item bg-mobile-claro">
+              <span class="fw-bold d-block text-passion">Sábado</span>
+              <div>12:00 às 15:00 (Almoço)</div>
+              <div>19:00 à 00:00 (Jantar)</div>
+            </li>
+
+            <li class="list-group-item bg-mobile-escuro">
+              <span class="fw-bold d-block text-passion">Domingo</span>
+              12:00 às 16:00
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
     </div>
   </section>
 
-
   <!-- ================== 2. CARDÁPIO ================== -->
-  <section id="cardapio" class="py-5">
+  <section id="cardapio" class="bg-light py-5">
     <div class="container">
       <h2 class="mb-3">Cardápio</h2>
       <p>
@@ -417,7 +520,8 @@
 
                     <div class="descricao">
                       <p class="card-text ms-3 mb-0"><strong>Rillettes:</strong><br>
-                        Patê de carne desfiada e cozida lentamente, servida como uma deliciosa entrada da culinária francesa.
+                        Patê de carne desfiada e cozida lentamente, servida como uma deliciosa entrada da culinária
+                        francesa.
                       </p>
                     </div>
                   </div>
@@ -471,13 +575,14 @@
 
                     <div class="lado-esquerdo">
                       <div class="imagem">
-                        <img src="../img/ratatouille.jpg" class="img-fluid img-borda-dourada rounded"
-                          alt="Escargots" style="max-width: 170px; height: auto;">
+                        <img src="../img/ratatouille.jpg" class="img-fluid img-borda-dourada rounded" alt="Escargots"
+                          style="max-width: 170px; height: auto;">
                       </div>
 
                       <div class="descricao">
                         <p class="card-text ms-3 mb-0"><strong>Ratatouille:</strong><br>
-                          Prato clássico da culinária francesa, um refogado rústico de legumes como berinjela, abobrinha, pimentão, tomate e cebola. <br>
+                          Prato clássico da culinária francesa, um refogado rústico de legumes como berinjela,
+                          abobrinha, pimentão, tomate e cebola. <br>
                           Perfeito pra você e aquela pessoa especial 😉.
                         </p>
                       </div>
@@ -499,7 +604,8 @@
 
                       <div class="descricao">
                         <p class="card-text ms-3 mb-0"><strong>Homard Grillé:</strong><br>
-                          Prato clássico e elegante feito para suas ocasiões especiais, uma lagosta fresca temperada com manteiga, alho, ervas e um toque de vinho branco grelhada no forno.<br>
+                          Prato clássico e elegante feito para suas ocasiões especiais, uma lagosta fresca temperada com
+                          manteiga, alho, ervas e um toque de vinho branco grelhada no forno.<br>
                           Servida com nosso molho branco e limões sicilianos.
                         </p>
                       </div>
@@ -560,7 +666,7 @@
 
 
   <!-- ================== 3. SOBRE NÓS ================== -->
-  <section id="sobre" class="bg-light py-5">
+  <section id="sobre" class="py-5">
     <div class="container">
       <h2 class="mb-3">Sobre Nós</h2>
 
@@ -592,7 +698,7 @@
 
 
   <!-- ================== 4. RESERVAS ================== -->
-  <section id="reservas" class="py-5">
+  <section id="reservas" class=" bg-light py-5">
     <div class="container">
       <h2 class="mb-3">Reservas</h2>
 
@@ -619,7 +725,7 @@
 
 
   <!-- ================== 5. GALERIA ================== -->
-  <section id="galeria" class="bg-light py-5">
+  <section id="galeria" class="py-5">
     <div class="container">
       <h2 class="mb-3">Galeria</h2>
       <p>
@@ -643,7 +749,7 @@
 
 
   <!-- ================== 6. FALE CONOSCO ================== -->
-  <section id="contato" class="py-5">
+  <section id="contato" class="ng-light py-5">
     <div class="container">
       <h2 class="mb-3">Fale Conosco</h2>
 
@@ -673,7 +779,7 @@
 
 
   <!-- ================== 7. PEDIDOS ONLINE / ENTREGA ================== -->
-  <section id="pedidos" class="bg-light py-5">
+  <section id="pedidos" class="py-5">
     <div class="container">
       <h2 class="mb-3">Pedidos Online e Entrega</h2>
       <p>
@@ -690,7 +796,7 @@
 
 
   <!-- ================== 9–10. PROMOÇÕES & AVALIAÇÕES ONLINE ================== -->
-  <section id="promocoes" class="py-5">
+  <section id="promocoes" class="bg-light py-5">
     <div class="container">
       <h2 class="mb-3">Promoções Especiais</h2>
       <p>
