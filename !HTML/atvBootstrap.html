@@ -139,22 +139,28 @@
       object-position: top center;
     }
 
-    #accordionPaneLsStayOpenExample {
+    #accordionPanelsStayOpenExample {
       border: 2px solid #daa520;
       border-radius: 10px;
       overflow: hidden;
     }
 
-    .accordion-item {
-      border: none;
+    #accordionPanelsStayOpenExample .accordion-item,
+    #accordionPoliticas {
+      border: none !important;
+      margin-top: 0 !important;
       border-bottom: 1px solid #daa520;
     }
 
-    .accordion-item:last-child {
-      border-bottom: none;
+    #accodrionPanelsStayOpenExample .accordion-item:last-child {
+      border-bottom: none !important;
     }
 
-    .accordion-button {
+    .accordion-button:not(.collapsed) {
+      box-shadow: inset 0 -1px 0 0 #daa520 !important;
+    }
+
+    .accordion-item .accordion-button {
       border-radius: 0 !important;
     }
 
@@ -317,7 +323,7 @@
   <!-- ================== 1. PÁGINA INICIAL ================== -->
   <section id="inicio" class="bg-light py-5">
     <div class="container">
-      <h1 class="mb-3">Página Inicial</h1>
+      <h1 class="mb-3 border-bottom pb-2 border-warning d-inline-block">Página Inicial</h1>
       <p>
         Seja muito bem vindo(a) ao restaurante Passion Doré! Desejamos a você um bon appétit aqui no nosso restaurante
         <br>
@@ -369,7 +375,7 @@
   </section>
   <section id="horario" class="py-5">
     <div class="container">
-      <h2 class="mb-3">Horário de funcionamento</h2>
+      <h2 class="mb-3 border-bottom pb-2 border-warning d-inline-block">Horário de funcionamento</h2>
 
       <div class="d-none d-md-block">
         <div class="row text-center bg-horario fw-bold">
@@ -446,10 +452,13 @@
   <!-- ================== 2. CARDÁPIO ================== -->
   <section id="cardapio" class="bg-light py-5">
     <div class="container">
-      <h2 class="mb-3">Cardápio</h2>
+      <h2 class="mb-3 border-bottom pb-2 border-warning d-inline-block">Cardápio</h2>
       <p>
-        [Descrição geral do cardápio.] Explique brevemente o tipo de pratos que o
-        restaurante oferece e como o cardápio está organizado.
+        O nosso cardápio está rico de sabores franceses trazidos diretamente dos conhecimentos de Érick Jacquin, o
+        renomado cozinheiro frânces aclamado pela crítica. <br> <br>
+        O cardápio aqui embaixo está dividido em 4 categorias: Entradas, Pratos Principais, Sobremesas e Bebidas.
+        Recomenda-se começar pela entrada, em seguida os pratos principais <br>
+        juntamente das bebidas e por último a sobremesa, sinta-se à vontade 😊.
       </p>
 
       <div class="accordion" id="accordionPanelsStayOpenExample">
@@ -633,10 +642,78 @@
             </h2>
             <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
               data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the third item’s accordion body. Nothing more exciting
-                happening here in terms of content, but just filling up the space to make it look, at least at first
-                glance, a bit more representative of how this would look in a real-world application.
+              <div class="accordion-body">
+                <div class="item-menu">
+
+                  <div class="lado-esquerdo">
+                    <div class="imagem">
+                      <img src="../img/creme.png" class="img-fluid img-borda-dourada rounded" alt="Escargots"
+                        style="max-width: 170px; height: auto;">
+                    </div>
+
+                    <div class="descricao">
+                      <p class="card-text ms-3 mb-0"><strong>Crème Brûlée:</strong><br>
+                        Casquinha crocante de açúcar cobrindo o creme de baunilha super aveludado, o topo quente e o
+                        creme bem gelado.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="container-preco">
+                    <span class="preco">R$29,90</span>
+                    <button type="button" class="btn-compra">Comprar</button>
+                  </div>
+                </div>
+
+                <div class="item-menu">
+
+                  <div class="lado-esquerdo">
+                    <div class="imagem">
+                      <img src="../img/macaron.png" class="img-fluid img-borda-dourada rounded" alt="Escargots"
+                        style="max-width: 170px; height: auto;">
+                    </div>
+
+                    <div class="descricao">
+                      <p class="card-text ms-3 mb-0"><strong>Macarons:</strong><br>
+                        Uma bolacha simples e humilde com os mais diversos sabores: chocolate, pistache, morango, doce
+                        de leite, cereja, limão-siciliano, amêndoas e baunilha
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="container-preco">
+                    <span class="preco">R$24,90</span>
+                    <button type="button" class="btn-compra">Comprar</button>
+                    <small class="mt-2 text-muted" style="font-size: 12px; font-weight: 800;">O preço se refere a 5
+                      unidade(s)</small>
+                  </div>
+                </div>
+
+                <div class="item-menu">
+
+                  <div class="lado-esquerdo">
+                    <div class="imagem">
+                      <img src="../img/eclair.jpg" class="img-fluid img-borda-dourada rounded" alt="Escargots"
+                        style="max-width: 170px; height: auto;">
+                    </div>
+
+                    <div class="descricao">
+                      <p class="card-text ms-3 mb-0"><strong>Éclair:</strong><br>
+                        Doce tradicional da confeitaria francesa. Com sua massa leve, recheios cremosos: <br> (Creme de
+                        confeiteiro, Ganache, Creme de avelã, Creme de frutas e Chantilly) e coberturas elegantes,
+                        encantador pela aparência quanto pelo sabor.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="container-preco">
+                    <span class="preco">R$8,90</span>
+                    <button type="button" class="btn-compra">Comprar</button>
+                    <small class="mt-2 text-muted" style="font-size: 12px; font-weight: 800;">O preço se refere a 1
+                      unidade(s)</small>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -651,13 +728,110 @@
             </h2>
             <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
               data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the first item’s accordion body.
+              <div class="accordion-body">
+                <div class="item-menu">
+
+                  <div class="lado-esquerdo">
+                    <div class="imagem">
+                      <img src="../img/Mon Bouquet.jpg" class="img-fluid img-borda-dourada rounded" alt="Escargots"
+                        style="max-width: 170px; height: auto; height: 250px; width: 100px;">
+                    </div>
+
+                    <div class="descricao">
+                      <p class="card-text ms-3 mb-0"><strong>Mon Bouquet</strong><br>
+                        750ml <br>
+                        Teor Alcoólico: 12,5%
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="container-preco">
+                    <span class="preco">R$59,90</span>
+                    <button type="button" class="btn-compra">Comprar</button>
+                    <small class="mt-2 text-muted" style="font-size: 12px; font-weight: 800;">R$74,60 / Litro</small>
+                  </div>
+                </div>
+
+                <div class="item-menu">
+
+                  <div class="lado-esquerdo">
+                    <div class="imagem">
+                      <img src="../img/Grandier.jpg" class="img-fluid img-borda-dourada rounded" alt="Escargots"
+                        style="max-width: 170px; height: auto; height: 250px; width: 100px;">
+                    </div>
+
+                    <div class="descricao">
+                      <p class="card-text ms-3 mb-0"><strong>Grandier Vinho Tinto</strong><br>
+                        750ml <br>
+                        Teor Alcoólico: 13%
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="container-preco">
+                    <span class="preco">R$55,00</span>
+                    <button type="button" class="btn-compra">Comprar</button>
+                    <small class="mt-2 text-muted" style="font-size: 12px; font-weight: 800;">R$73,33 / Litro</small>
+                  </div>
+                </div>
+
+                <div class="item-menu">
+
+                  <div class="lado-esquerdo">
+                    <div class="imagem">
+                      <img src="../img/Toneletce.jpg" class="img-fluid img-borda-dourada rounded" alt="Escargots"
+                        style="max-width: 170px; height: auto; height: 250px; width: 100px;">
+                    </div>
+
+                    <div class="descricao">
+                      <p class="card-text ms-3 mb-0"><strong>Tonéletce</strong><br>
+                        750ml <br>
+                        Teor Alcoólico: 11%
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="container-preco">
+                    <span class="preco">R$65,90</span>
+                    <button type="button" class="btn-compra">Comprar</button>
+                    <small class="mt-2 text-muted" style="font-size: 12px; font-weight: 800;">R$80,00 / Litro</small>
+                  </div>
+                </div>
+
+                <div class="item-menu">
+
+                  <div class="lado-esquerdo">
+                    <div class="imagem">
+                      <img src="../img/baixados.png" class="img-fluid img-borda-dourada rounded" alt="Escargots"
+                        style="max-width: 170px; height: auto;">
+                    </div>
+
+                    <div class="descricao">
+                      <p class="card-text ms-3 mb-0"><strong>Latinhas Diversas:</strong><br>
+                        Coca-Cola (330ml) <br>
+                        Coca-Cola Zero (330ml) <br>
+                        Sprite (330ml) <br>
+                        Fanta Laranja (330ml) <br>
+                        Fanta Uva (330ml) <br>
+                        Pepsi (330ml) <br>
+                        Guaraná (330ml) <br> <br>
+                        <strong>Cervejas:</strong> <br>
+                        Brahma (473ml) <br>
+                        Devassa (350ml) <br>
+                        Pilsener (350ml)
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="container-preco">
+                    <span class="preco">R$14,90</span>
+                    <button type="button" class="btn-compra">Comprar</button>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
-
-
           <!-- TODO: Criar estrutura para categorias (entradas, principais, sobremesas, bebidas) -->
         </div>
       </div>
@@ -668,155 +842,671 @@
   <!-- ================== 3. SOBRE NÓS ================== -->
   <section id="sobre" class="py-5">
     <div class="container">
-      <h2 class="mb-3">Sobre Nós</h2>
+      <div class="container">
+        <h2 class="mb-4 text-center border-bottom pb-2 border-warning d-inline-block">Sobre Nós</h2>
 
+        <div class="row align-items-center mb-5">
+          <div class="col-md-4 text-center mb-3 mb-md-0">
+            <img src="../img/upscaled-2x-Jacquin.png" alt="Chef Érick Jacquin" class="img-fluid rounded-circle shadow"
+              style="width: 250px; height: 250px; object-fit: cover; border: 5px solid #daa520;">
+          </div>
+          <div class="col-md-8">
+            <h3 class="h4 fw-bold text-passion">O Chef: Érick Jacquin</h3>
+            <p class="lead text-muted">"A gastronomia é a arte de usar comida para criar felicidade."</p>
+            <p>
+              A cozinha do Passion Doré é assinada por ninguém menos que <strong>Érick Jacquin</strong>.
+              Reconhecido como um dos mais importantes chefs franceses em atividade no Brasil e jurado do
+              <em>MasterChef</em>,
+              Jacquin traz para nossa casa a exigência técnica e o "tômpero" inconfundível que o tornaram uma lenda
+              viva.
+            </p>
+            <p>
+              Ele foi o primeiro chef da América do Sul a receber o título de <em>Maître Cuisinier de France</em>,
+              a mais alta honraria da gastronomia francesa. Aqui, ele apresenta clássicos atemporais com a sua
+              assinatura de excelência.
+            </p>
+          </div>
+        </div>
 
-      <h3 class="h5 mt-3">História do Restaurante</h3>
-      <p>
-        [História.] Conte como o restaurante foi criado, qual a inspiração,
-        valores e missão. Este texto ainda é fictício e deve ser substituído por
-        uma história original.
-      </p>
+        <h3 class="h5 fw-bold text-center mb-4">🏆 Prêmios e Reconhecimentos</h3>
 
+        <div class="row text-center g-3">
 
-      <h3 class="h5 mt-3">Perfil do Chef</h3>
-      <p>
-        [Perfil do chef.] Apresente o chef ou a equipe de culinária, falando
-        sobre formação, especialidades e conquistas relevantes. Os alunos podem
-        futuramente adicionar uma foto em forma de card.
-      </p>
+          <div class="col-6 col-md-3">
+            <div class="card h-100 border-warning shadow-sm">
+              <div class="card-body py-3">
+                <div class="fs-1 mb-2">👨‍🍳</div>
+                <h6 class="card-title fw-bold">Maître Cuisinier</h6>
+                <small class="text-muted">Membro da Maîtres Cuisiniers de France</small>
+              </div>
+              <div class="card-footer bg-passion text-white p-1">
+                <small>Honraria Máxima</small>
+              </div>
+            </div>
+          </div>
 
+          <div class="col-6 col-md-3">
+            <div class="card h-100 border-warning shadow-sm">
+              <div class="card-body py-3">
+                <div class="fs-1 mb-2">🎖️</div>
+                <h6 class="card-title fw-bold">Légion d'Honneur</h6>
+                <small class="text-muted">Condecorado pelo governo da França</small>
+              </div>
+              <div class="card-footer bg-passion text-white p-1">
+                <small>Cavaleiro da Ordem</small>
+              </div>
+            </div>
+          </div>
 
-      <h3 class="h5 mt-3">Prêmios e Reconhecimentos</h3>
-      <p>
-        [Prêmios.] Liste prêmios, reconhecimentos ou destaques em revistas,
-        blogs gastronômicos, etc. Os alunos podem usar uma lista, badges ou
-        outro componente Bootstrap.
-      </p>
-    </div>
+          <div class="col-6 col-md-3">
+            <div class="card h-100 border-warning shadow-sm">
+              <div class="card-body py-3">
+                <div class="fs-1 mb-2">⭐</div>
+                <h6 class="card-title fw-bold">Guia Michelin</h6>
+                <small class="text-muted">Reconhecimento pela excelência culinária</small>
+              </div>
+              <div class="card-footer bg-passion text-white p-1">
+                <small>Estrela Michelin</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="card h-100 border-warning shadow-sm">
+              <div class="card-body py-3">
+                <div class="fs-1 mb-2">🍽️</div>
+                <h6 class="card-title fw-bold">Veja Comer & Beber</h6>
+                <small class="text-muted">Eleito Chef do Ano múltiplas vezes</small>
+              </div>
+              <div class="card-footer bg-passion text-white p-1">
+                <small>Melhor Francês</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
   </section>
 
 
   <!-- ================== 4. RESERVAS ================== -->
-  <section id="reservas" class=" bg-light py-5">
+  <section id="reservas" class="py-5">
     <div class="container">
-      <h2 class="mb-3">Reservas</h2>
+      <h2 class="mb-4 text-center border-bottom pb-2 border-warning d-inline-block">Faça sua Reserva</h2>
 
+      <div class="row justify-content-center">
+        <div class="col-lg-7 mb-5 mb-lg-0">
+          <div class="card shadow border-0">
+            <div class="card-header bg-passion text-center fw-bold text-black">
+              Solicitação de Mesa
+            </div>
+            <div class="card-body p-4">
+              <form>
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label for="reservaNome" class="form-label fw-bold">Nome Completo</label>
+                    <input type="text" class="form-control" id="reservaNome" placeholder="Seu nome" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="reservaTel" class="form-label fw-bold">Telefone / WhatsApp</label>
+                    <input type="tel" class="form-control" id="reservaTel" placeholder="(xx) 99999-9999" required>
+                  </div>
+                </div>
 
-      <h3 class="h5 mt-3">Formulário de Reserva</h3>
-      <p>
-        [Formulário de reservas.] Aqui os alunos devem criar um formulário
-        usando componentes de formulário do Bootstrap, com campos para:
-        data, horário, número de pessoas, nome, telefone e e-mail.
-      </p>
+                <div class="mb-3">
+                  <label for="reservaEmail" class="form-label fw-bold">E-mail</label>
+                  <input type="email" class="form-control" id="reservaEmail" placeholder="seuemail@exemplo.com">
+                </div>
 
+                <div class="row g-3 mb-4">
+                  <div class="col-md-4">
+                    <label for="reservaData" class="form-label fw-bold">Data</label>
+                    <input type="date" class="form-control" id="reservaData" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="reservaHora" class="form-label fw-bold">Horário</label>
+                    <select class="form-select" id="reservaHora" required>
+                      <option selected disabled>Escolha...</option>
+                      <option value="19:00">19:00</option>
+                      <option value="19:30">19:30</option>
+                      <option value="20:00">20:00</option>
+                      <option value="20:30">20:30</option>
+                      <option value="21:00">21:00</option>
+                      <option value="21:30">21:30</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="reservaPessoas" class="form-label fw-bold">Pessoas</label>
+                    <select class="form-select" id="reservaPessoas" required>
+                      <option value="1">1 pessoa</option>
+                      <option value="2" selected>2 pessoas</option>
+                      <option value="3">3 pessoas</option>
+                      <option value="4">4 pessoas</option>
+                      <option value="5">5 pessoas</option>
+                      <option value="6+">+ de 6 (Ligar)</option>
+                    </select>
+                  </div>
+                </div>
 
-      <!-- TODO: Formulário Bootstrap de reserva -->
+                <button type="submit" class="btn btn-compra w-100 py-2 fw-bold fs-5">
+                  Confirmar Reserva
+                </button>
+                <small class="d-block text-center mt-2 text-muted fst-italic">
+                  *A confirmação será enviada via WhatsApp.
+                </small>
+              </form>
+            </div>
+          </div>
+        </div>
 
+        <div class="col-lg-5">
+          <h3 class="h5 fw-bold mb-3 text-passion">Política de Reservas</h3>
 
-      <h3 class="h5 mt-3">Política de Reservas</h3>
-      <p>
-        [Política de reservas.] Descreva regras claras sobre cancelamentos,
-        tolerância de atraso, confirmação por e-mail/WhatsApp etc. Os alunos
-        podem usar um componente como accordion para organizar essas políticas.
-      </p>
+          <div class="accordion" id="accordionPoliticas">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-accordion fw-bold" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#pol1">
+                  ⏱️ Tolerância de Atraso
+                </button>
+              </h2>
+              <div id="pol1" class="accordion-collapse collapse" data-bs-parent="#accordionPoliticas">
+                <div class="accordion-body">
+                  Sua mesa ficará reservada por até <strong>15 minutos</strong> após o horário agendado.
+                  Caso ocorra um imprevisto, pedimos que nos avise por telefone para tentarmos manter sua reserva.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-accordion fw-bold" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#pol2">
+                  ❌ Cancelamentos
+                </button>
+              </h2>
+              <div id="pol2" class="accordion-collapse collapse" data-bs-parent="#accordionPoliticas">
+                <div class="accordion-body">
+                  Cancelamentos devem ser feitos com pelo menos <strong>2 horas de antecedência</strong>.
+                  Isso nos ajuda a liberar a mesa para outros clientes que estão na lista de espera.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-accordion fw-bold" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#pol3">
+                  ✅ Confirmação da Reserva
+                </button>
+              </h2>
+              <div id="pol3" class="accordion-collapse collapse" data-bs-parent="#accordionPoliticas">
+                <div class="accordion-body">
+                  Após preencher o formulário, nossa equipe entrará em contato via <strong>WhatsApp ou E-mail</strong>
+                  em até 30 minutos para confirmar sua mesa. A reserva só é válida após essa confirmação.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-accordion fw-bold" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#pol4">
+                  👔 Dress Code (Sugestão)
+                </button>
+              </h2>
+              <div id="pol4" class="accordion-collapse collapse" data-bs-parent="#accordionPoliticas">
+                <div class="accordion-body">
+                  Sugerimos o estilo <strong>Esporte Fino</strong>. Não é permitida a entrada com trajes de banho ou
+                  regatas.
+                  Queremos que sua noite seja especial e elegante!
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
 
   <!-- ================== 5. GALERIA ================== -->
-  <section id="galeria" class="py-5">
+  <section id="galeria" class="bg-light py-5">
     <div class="container">
-      <h2 class="mb-3">Galeria</h2>
-      <p>
-        [Galeria de fotos.] Nesta seção, os alunos devem criar uma galeria com
-        imagens em alta resolução de pratos, eventos e do interior do
-        restaurante, usando grid do Bootstrap e/ou componentes como cards.
+
+      <h2 class="mb-4 text-center border-bottom pb-2 border-warning d-inline-block">
+        Galeria
+      </h2>
+      <p class="text-center text-muted mb-4">
+        Um pouco da nossa atmosfera, pratos e momentos especiais.
       </p>
 
+      <div class="row g-3 mb-5">
 
-      <!-- TODO: Grid de imagens / cards com fotos -->
+        <div class="col-6 col-md-4">
+          <div class="overflow-hidden rounded border border-warning shadow-sm position-relative">
+            <img src="../img/Gemini_Generated_Image_y8x2lmy8x2lmy8x2.png" alt="Interior do Restaurante"
+              class="img-fluid w-100 img-galeria hover-zoom">
+          </div>
+        </div>
 
+        <div class="col-6 col-md-4">
+          <div class="overflow-hidden rounded border border-warning shadow-sm">
+            <img src="../img/magret-clementine-a.jpg.png" alt="Magret de Pato"
+              class="img-fluid w-100 img-galeria hover-zoom">
+          </div>
+        </div>
 
-      <h3 class="h5 mt-3">Avaliações de Clientes</h3>
-      <p>
-        [Depoimentos.] Inclua comentários positivos de clientes, com nome,
-        talvez uma nota em estrelas e um pequeno texto. Os alunos podem usar
-        cards ou listas estilizadas do Bootstrap.
-      </p>
+        <div class="col-6 col-md-4">
+          <div class="overflow-hidden rounded border border-warning shadow-sm">
+            <img src="../img/escargots.jpg" alt="Escargots" class="img-fluid w-100 img-galeria hover-zoom">
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <div class="overflow-hidden rounded border border-warning shadow-sm">
+            <img src="../img/creme.png" alt="Sobremesas" class="img-fluid w-100 img-galeria hover-zoom">
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <div class="overflow-hidden rounded border border-warning shadow-sm">
+            <img src="../img/vinhos.png" alt="Vinhos" class="img-fluid w-100 img-galeria hover-zoom">
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <div class="overflow-hidden rounded border border-warning shadow-sm">
+            <img src="../img/upscaled-2x-Jacquin.png" alt="Chef Jacquin" class="img-fluid w-100 img-galeria hover-zoom"
+              style="object-position: top;">
+          </div>
+        </div>
+
+      </div>
+
+      <h3 class="h2 text-center border-bottom pb-2 border-warning d-inline-block mt-4 mb-4">
+        O que dizem nossos clientes
+      </h3>
+
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <img src="https://ui-avatars.com/api/?name=Ana+Silva&background=daa520&color=fff"
+                  class="rounded-circle shadow-sm" width="60" alt="Cliente">
+              </div>
+              <h5 class="card-title fw-bold">Ana Silva</h5>
+              <div class="text-warning mb-3 fs-5">★★★★★</div>
+              <p class="card-text fst-italic text-muted">
+                "A experiência foi mágica! O Chef Jacquin realmente sabe o que faz.
+                O Magret de Pato estava no ponto perfeito. Me senti em Paris!"
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <img src="https://ui-avatars.com/api/?name=Carlos+M&background=daa520&color=fff"
+                  class="rounded-circle shadow-sm" width="60" alt="Cliente">
+              </div>
+              <h5 class="card-title fw-bold">Carlos Mendes</h5>
+              <div class="text-warning mb-3 fs-5">★★★★★</div>
+              <p class="card-text fst-italic text-muted">
+                "Atendimento impecável do início ao fim. A Sopa de Cebola é a melhor que já comi na vida.
+                Recomendo fazer reserva, pois vale cada minuto."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+              <div class="mb-3">
+                <img src="https://ui-avatars.com/api/?name=Mariana+R&background=daa520&color=fff"
+                  class="rounded-circle shadow-sm" width="60" alt="Cliente">
+              </div>
+              <h5 class="card-title fw-bold">Mariana Rosa</h5>
+              <div class="text-warning mb-3 fs-5">★★★★☆</div>
+              <p class="card-text fst-italic text-muted">
+                "Ambiente romântico e sofisticado, perfeito para um jantar a dois.
+                Os vinhos sugeridos harmonizaram perfeitamente com o jantar."
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
 
   <!-- ================== 6. FALE CONOSCO ================== -->
-  <section id="contato" class="ng-light py-5">
+  <section id="contato" class="py-5 bg-white">
     <div class="container">
-      <h2 class="mb-3">Fale Conosco</h2>
+      <h2 class="mb-5 text-center border-bottom pb-2 border-warning d-inline-block">Fale Conosco</h2>
 
+      <div class="row g-5">
 
-      <h3 class="h5 mt-3">Informações de Contato</h3>
-      <p>
-        [Dados de contato.] Adicione endereço, telefone, e-mail e, se quiser,
-        um mapa incorporado (Google Maps). Os alunos devem substituir esse
-        texto por informações fictícias ou reais para o restaurante.
-      </p>
+        <div class="col-lg-5">
+          <h3 class="h4 fw-bold text-passion mb-4">Onde Estamos</h3>
 
+          <div class="d-flex align-items-start mb-3">
+            <div class="fs-4 text-warning me-3">📍</div>
+            <div>
+              <h5 class="fw-bold mb-1">Endereço</h5>
+              <p class="text-muted mb-0">Rua da Consolação, 1234 - Jardins<br>São Paulo - SP, 01416-000</p>
+            </div>
+          </div>
 
-      <!-- TODO: Organizar informações de contato e mapa usando o grid do Bootstrap -->
+          <div class="d-flex align-items-start mb-3">
+            <div class="fs-4 text-warning me-3">📞</div>
+            <div>
+              <h5 class="fw-bold mb-1">Telefone</h5>
+              <p class="text-muted mb-0">(11) 3322-9988</p>
+              <small class="text-success fw-bold"><i class="bi bi-whatsapp"></i> (11) 99999-9999 (WhatsApp)</small>
+            </div>
+          </div>
 
+          <div class="d-flex align-items-start mb-4">
+            <div class="fs-4 text-warning me-3">📧</div>
+            <div>
+              <h5 class="fw-bold mb-1">E-mail</h5>
+              <p class="text-muted mb-0">contato@passiondore.com.br</p>
+              <p class="text-muted mb-0">eventos@passiondore.com.br</p>
+            </div>
+          </div>
 
-      <h3 class="h5 mt-3">Formulário de Contato</h3>
-      <p>
-        [Formulário de contato.] Crie um formulário com campos para nome,
-        e-mail, assunto e mensagem, usando os componentes de formulário do
-        Bootstrap.
-      </p>
+          <div class="ratio ratio-4x3 shadow-sm border border-warning rounded">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.145607347392!2d-46.6601445!3d-23.5632103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1709667508092!5m2!1spt-BR!2sbr"
+              style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
 
+        <div class="col-lg-7">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-header bg-passion fw-bold text-center text-black">
+              Envie uma Mensagem
+            </div>
+            <div class="card-body p-4">
+              <form>
+                <div class="row g-3">
 
-      <!-- TODO: Formulário Bootstrap de contato -->
+                  <div class="col-md-6">
+                    <label for="contatoNome" class="form-label fw-bold">Seu Nome</label>
+                    <input type="text" class="form-control" id="contatoNome" placeholder="Digite seu nome" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="contatoEmail" class="form-label fw-bold">Seu E-mail</label>
+                    <input type="email" class="form-control" id="contatoEmail" placeholder="email@exemplo.com" required>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="contatoAssunto" class="form-label fw-bold">Assunto</label>
+                    <select class="form-select" id="contatoAssunto">
+                      <option selected>Dúvidas Gerais</option>
+                      <option value="1">Elogios ou Reclamações</option>
+                      <option value="2">Trabalhe Conosco</option>
+                      <option value="3">Eventos Corporativos</option>
+                      <option value="4">Imprensa</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="contatoMensagem" class="form-label fw-bold">Mensagem</label>
+                    <textarea class="form-control" id="contatoMensagem" rows="5" placeholder="Como podemos ajudar?"
+                      required></textarea>
+                  </div>
+
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-compra w-100 py-2 fw-bold fs-5">
+                      Enviar Mensagem
+                    </button>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
 
   <!-- ================== 7. PEDIDOS ONLINE / ENTREGA ================== -->
-  <section id="pedidos" class="py-5">
+  <section id="pedidos" class="py-5 bg-light">
     <div class="container">
-      <h2 class="mb-3">Pedidos Online e Entrega</h2>
-      <p>
-        [Pedidos online.] Descreva como o cliente pode fazer pedidos para
-        retirada ou entrega (por telefone, site, aplicativo, WhatsApp etc.).
+      <h2 class="mb-4 text-center border-bottom pb-2 border-warning d-inline-block">Pedidos & Entrega</h2>
+      <p class="text-center text-muted mb-5">
+        Leve a experiência Passion Doré para o conforto da sua casa. <br>
+        Embalagens térmicas especiais que mantêm a temperatura e a apresentação dos pratos.
       </p>
-      <p>
-        [Áreas de entrega.] Liste os bairros atendidos e os tempos estimados de
-        entrega. Os alunos podem usar listas, cards ou tabelas para organizar
-        essas informações.
-      </p>
+
+      <div class="row g-4 mb-5">
+
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm text-center">
+            <div class="card-body p-4">
+              <div class="fs-1 mb-3">🛵</div>
+              <h3 class="h4 fw-bold text-passion">Apps de Delivery</h3>
+              <p class="text-muted">
+                Peça com rapidez pelos seus aplicativos favoritos. Acompanhe o entregador em tempo real.
+              </p>
+              <div class="d-flex gap-2 justify-content-center mt-4">
+                <button class="btn btn-outline-danger fw-bold px-4">iFood</button>
+                <button class="btn btn-outline-warning fw-bold px-4 text-dark">Rappi</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 border-2 border-warning shadow-sm text-center" style="background-color: #fffbf0;">
+            <div class="card-body p-4">
+              <div class="fs-1 mb-3">🛍️</div>
+              <h3 class="h4 fw-bold text-passion">WhatsApp & Retirada</h3>
+              <p class="text-muted">
+                Faça o pedido direto conosco e ganhe <strong>10% de desconto</strong> ou retire no balcão sem taxa de
+                entrega.
+              </p>
+              <button class="btn btn-compra btn-lg mt-3 fw-bold w-100">
+                <i class="bi bi-whatsapp"></i> Fazer Pedido no Zap
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-sm">
+            <div class="card-header bg-passion text-center fw-bold text-black">
+              📍 Bairros Atendidos e Taxas
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-striped table-hover mb-0 text-center align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th class="py-3">Bairro / Região</th>
+                      <th class="py-3">Tempo Estimado</th>
+                      <th class="py-3">Taxa</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Jardins / Cerqueira César</td>
+                      <td>30 - 40 min</td>
+                      <td class="text-success fw-bold">Grátis</td>
+                    </tr>
+                    <tr>
+                      <td>Paulista / Bela Vista</td>
+                      <td>35 - 45 min</td>
+                      <td>R$ 7,00</td>
+                    </tr>
+                    <tr>
+                      <td>Pinheiros / Vila Madalena</td>
+                      <td>40 - 50 min</td>
+                      <td>R$ 12,00</td>
+                    </tr>
+                    <tr>
+                      <td>Itaim Bibi / Moema</td>
+                      <td>45 - 60 min</td>
+                      <td>R$ 15,00</td>
+                    </tr>
+                    <tr>
+                      <td>Outras Regiões (Sob Consulta)</td>
+                      <td>60+ min</td>
+                      <td>Consultar</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer text-center bg-white py-3">
+              <small class="text-muted fst-italic">
+                * Entregas grátis para pedidos acima de R$ 200,00 em um raio de 5km.
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
-
 
   <!-- ================== 9–10. PROMOÇÕES & AVALIAÇÕES ONLINE ================== -->
-  <section id="promocoes" class="bg-light py-5">
+  <section id="promocoes" class="py-5 bg-white">
     <div class="container">
-      <h2 class="mb-3">Promoções Especiais</h2>
-      <p>
-        [Promoções.] Destaque promoções em andamento, como descontos em dias
-        específicos, programas de fidelidade ou combos especiais. Os alunos
-        podem usar componentes como alertas, cards ou badges para chamar
-        atenção.
-      </p>
+      <h2 class="mb-5 text-center border-bottom pb-2 border-warning d-inline-block">Destaques & Opiniões</h2>
+
+      <div class="row g-5">
+
+        <div class="col-lg-7">
+          <h3 class="h4 fw-bold text-passion mb-4">🔥 Ofertas Especiais</h3>
+
+          <div class="alert alert-warning border-warning d-flex align-items-center shadow-sm" role="alert">
+            <div class="fs-1 me-3">🎂</div>
+            <div>
+              <h5 class="alert-heading fw-bold mb-1">Aniversariante da Semana?</h5>
+              <p class="mb-0">
+                Celebre conosco! Trazendo 4 convidados pagantes, a sua sobremesa
+                <strong>Petit Gâteau</strong> sai por conta da casa.
+              </p>
+            </div>
+          </div>
+
+          <div class="row g-3 mt-2">
+
+            <div class="col-md-6">
+              <div class="card h-100 border-warning border-opacity-50 shadow-sm">
+                <div class="card-header bg-transparent border-bottom border-warning fw-bold text-center">
+                  🕛 Terça a Sexta (Almoço)
+                </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold text-passion">Menu Executivo</h5>
+                  <p class="card-text small text-muted">Entrada + Principal + Sobremesa</p>
+                  <h4 class="text-dark fw-bold">R$ 69,90</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card h-100 border-warning border-opacity-50 shadow-sm">
+                <div class="card-header bg-transparent border-bottom border-warning fw-bold text-center">
+                  🍷 Quartas-feiras (Jantar)
+                </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold text-passion">Noite da Rolha Free</h5>
+                  <p class="card-text small text-muted">Traga seu vinho especial sem taxa.</p>
+                  <span class="badge bg-success">Economia de R$ 80,00</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-4 text-center text-md-start">
+            <a href="#reservas" class="btn btn-compra fw-bold px-4">Garanta sua mesa agora</a>
+          </div>
+        </div>
 
 
-      <h3 class="h5 mt-3">Avaliações Online</h3>
-      <p>
-        [Links para avaliações.] Inclua links para plataformas de avaliação
-        (por exemplo: Google Avaliações, TripAdvisor, Yelp etc.) e destaque as
-        notas médias do restaurante. Os alunos podem usar listas e badges do
-        Bootstrap para isso.
-      </p>
+        <div class="col-lg-5">
+          <h3 class="h4 fw-bold text-passion mb-4 text-center text-lg-start">O que dizem na web</h3>
+
+          <div class="card bg-passion text-black text-center mb-4 border-0 shadow">
+            <div class="card-body">
+              <h6 class="text-uppercase fw-bold opacity-75">Média Geral</h6>
+              <h1 class="display-3 fw-bold mb-0">4.8<small class="fs-4 text-white">/5</small></h1>
+              <div class="fs-4 text-white">★★★★★</div>
+              <p class="small mb-0 mt-2">Baseado em +1.200 avaliações</p>
+            </div>
+          </div>
+
+          <div class="list-group shadow-sm">
+
+            <a href="#"
+              class="list-group-item list-group-item-action d-flex justify-content-between align-items-center p-3"
+              target="_blank">
+              <div class="d-flex align-items-center">
+                <span class="fs-4 me-3">🇬</span>
+                <div>
+                  <h6 class="mb-0 fw-bold">Google Avaliações</h6>
+                  <small class="text-muted">Mais recente: "Incrível!"</small>
+                </div>
+              </div>
+              <span class="badge bg-success rounded-pill fs-6">4.9</span>
+            </a>
+
+            <a href="#"
+              class="list-group-item list-group-item-action d-flex justify-content-between align-items-center p-3"
+              target="_blank">
+              <div class="d-flex align-items-center">
+                <span class="fs-4 me-3">🦉</span>
+                <div>
+                  <h6 class="mb-0 fw-bold">TripAdvisor</h6>
+                  <small class="text-muted">Certificado de Excelência</small>
+                </div>
+              </div>
+              <span class="badge bg-success rounded-pill fs-6">4.8</span>
+            </a>
+
+            <a href="#"
+              class="list-group-item list-group-item-action d-flex justify-content-between align-items-center p-3"
+              target="_blank">
+              <div class="d-flex align-items-center">
+                <span class="fs-4 me-3">⭐</span>
+                <div>
+                  <h6 class="mb-0 fw-bold">Restaurant Guru</h6>
+                  <small class="text-muted">Melhor Ambiente 2024</small>
+                </div>
+              </div>
+              <span class="badge bg-warning text-dark rounded-pill fs-6">4.7</span>
+            </a>
+
+          </div>
+
+          <div class="text-center mt-3">
+            <small class="text-muted fst-italic">Já nos visitou? Deixe sua avaliação!</small>
+          </div>
+
+        </div>
+
+      </div>
     </div>
   </section>
-
 
   <!-- ================== FOOTER ================== -->
   <footer class="bg-dark text-white text-center py-3">
